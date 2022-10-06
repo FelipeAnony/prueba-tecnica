@@ -1,61 +1,15 @@
 import { faker } from '@faker-js/faker';
 
-import { AccountModel } from '@/domain/models';
-import { Authentication, AuthParams } from '@/domain/usecases';
-import { Validator } from '@/data/protocols';
-
-const makeValidatorStub = (): Validator => {
-  class ValidatorStub implements Validator {
-    emailIsValid(email: string): boolean {
-      return true;
-    }
-    passwordIsValid(password: string): boolean {
-      return true;
-    }
-  }
-
-  return new ValidatorStub();
-};
+import { LocalAuthentication } from './localAuthentication';
+import { ValidatorStub } from '@/data/mocks';
+import { InvalidEmailError, InvalidPasswordError } from '@/data/errors';
 
 const makeSut = () => {
-  class LocalAuthentication implements Authentication {
-    constructor(private readonly validator: Validator) {}
-
-    auth(params: AuthParams): Promise<AccountModel> {
-      const emailIsValid = this.validator.emailIsValid(params.email);
-      const passwordIsValid = this.validator.passwordIsValid(params.password);
-
-      if (!emailIsValid) {
-        return Promise.reject(new InvalidEmailError());
-      }
-
-      if (!passwordIsValid) {
-        return Promise.reject(new InvalidPasswordError());
-      }
-
-      return Promise.resolve({ user: params.email });
-    }
-  }
-
-  const validatorStub = makeValidatorStub();
+  const validatorStub = new ValidatorStub();
   const sut = new LocalAuthentication(validatorStub);
 
   return { sut, validatorStub };
 };
-
-class InvalidEmailError extends Error {
-  constructor() {
-    super('Invalid Email');
-    this.name = 'InvalidEmailError';
-  }
-}
-
-class InvalidPasswordError extends Error {
-  constructor() {
-    super('Invalid Password');
-    this.name = 'InvalidPasswordError';
-  }
-}
 
 const email = faker.internet.email();
 const password = faker.internet.password();
