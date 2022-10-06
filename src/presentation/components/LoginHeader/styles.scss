@@ -1,3 +1,30 @@
-header {
-  
+@import '../../styles/colors';
+
+.loginHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $primary-color-mid;
+  width: 100%;
+  height: 100px;
+
+  .innerContainer {
+    width: 100%;
+    height: 75%;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .downLine {
+    width: 100%;
+    height: 25%;
+    background-color: $primary-color-dark;
+  }
+
+  .logo {
+    color: white;
+    font-size: 24px;
+  }
 }
