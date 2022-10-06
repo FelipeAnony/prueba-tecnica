@@ -1,5 +1,10 @@
 import { AccountModel } from '../models';
 
+export type AuthParams = {
+  email: string;
+  password: string;
+};
+
 export interface Authentication {
-  auth(): AccountModel;
+  auth(params: AuthParams): Promise<AccountModel>;
 }
