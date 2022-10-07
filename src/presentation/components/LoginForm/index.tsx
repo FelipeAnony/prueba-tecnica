@@ -13,6 +13,12 @@ const LoginForm: React.FC = () => {
   return (
     <section className={Styles.loginFormContainer}>
       <h1>Login</h1>
+      <div
+        title="Tu contraseña debe tener entre 6 - 12 caracteres, con al menos una letra mayuscula, una minuscula y un numero."
+        className={Styles.help}
+      >
+        ?
+      </div>
       <form onSubmit={(e) => e.preventDefault()} className={Styles.loginForm}>
         <Input
           label="Email"
@@ -33,7 +39,7 @@ const LoginForm: React.FC = () => {
           onChange={handleChange}
           type="password"
           value={loginData.password}
-          placeholder="Your password"
+          placeholder="6 - 12 alfanumeric characters"
           required
         />
 
