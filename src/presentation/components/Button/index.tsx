@@ -2,13 +2,23 @@ import Styles from './styles.scss';
 
 type Props = {
   onClick: () => void;
-  style?: 'default' | 'outline' | 'clear';
+  style?: 'default' | 'outline' | 'clear' | 'disabled';
+  disabled?: boolean;
   children: string | JSX.Element;
 };
 
-export const Button: React.FC<Props> = ({ children, onClick, style }) => {
+export const Button: React.FC<Props> = ({
+  children,
+  onClick,
+  style,
+  disabled,
+}) => {
   return (
-    <button className={Styles[style || 'default']} onClick={onClick}>
+    <button
+      disabled={disabled}
+      className={Styles[style || 'default']}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

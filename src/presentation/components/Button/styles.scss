@@ -38,3 +38,15 @@
   @extend .button;
   border: none;
 }
+
+.disabled {
+  @extend .button;
+  padding: 4px 8px;
+  border: solid 1px $primary-color-extraDark;
+  background-color: $primary-color-mid;
+  border-radius: 4px;
+  width: 100%;
+  color: white;
+  opacity: .8;
+  cursor: not-allowed;
+}
