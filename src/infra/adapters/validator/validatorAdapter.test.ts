@@ -9,8 +9,8 @@ const makeSut = (): Validator => {
     }
 
     passwordIsValid(password: string): boolean {
-      const passwordRegexp =
-        /^(?=.*\d)(?=.*[a-zA-Z])(?!.*[\W_\x7B-\xFF]).{4,16}$/;
+      const passwordRegexp = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{6,12}$/;
+
       return passwordRegexp.test(password);
     }
   }
@@ -27,5 +27,15 @@ describe('Validator adapter', () => {
   it('Should return true if a valid email is provided', () => {
     const sut = makeSut();
     expect(sut.emailIsValid(faker.internet.email())).toBe(true);
+  });
+
+  it('Should return false if an invalid password is provided', () => {
+    const sut = makeSut();
+    expect(sut.passwordIsValid('invalid-password')).toBe(false);
+  });
+
+  it('Should return true if a valid password is provided', () => {
+    const sut = makeSut();
+    expect(sut.passwordIsValid('1234aA')).toBe(true);
   });
 });
