@@ -1,4 +1,5 @@
 import { makeLocalAuthentication } from '@/main/factories';
+import { useGlobalDataContext } from '@/store/hooks';
 import { useEffect, useState } from 'react';
 
 const loginDataInitialValue = {
@@ -26,10 +27,12 @@ export const useLoginForm = () => {
 
   const handleSubmit = async () => {
     setButtonIsDisabled(true);
+    const { setUser } = useGlobalDataContext();
     const authentication = makeLocalAuthentication();
+
     try {
       const response = await authentication.auth(loginData);
-      console.log(response);
+      setUser(response);
     } catch (error) {
       setButtonIsDisabled(false);
       setError(error as Error);
