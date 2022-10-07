@@ -1,7 +1,8 @@
 import { Validator } from '@/data/protocols';
+import { faker } from '@faker-js/faker';
 
 const makeSut = (): Validator => {
-  class LocalValidation implements Validator {
+  class LocalValidator implements Validator {
     emailIsValid(email: string): boolean {
       const emailRegexp = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
       return emailRegexp.test(email);
@@ -14,12 +15,17 @@ const makeSut = (): Validator => {
     }
   }
 
-  return new LocalValidation();
+  return new LocalValidator();
 };
 
 describe('Validator adapter', () => {
-  it('Should return false if an invalid email are provided', () => {
+  it('Should return false if an invalid email is provided', () => {
     const sut = makeSut();
     expect(sut.emailIsValid('invalid-email')).toBe(false);
+  });
+
+  it('Should return true if a valid email is provided', () => {
+    const sut = makeSut();
+    expect(sut.emailIsValid(faker.internet.email())).toBe(true);
   });
 });
