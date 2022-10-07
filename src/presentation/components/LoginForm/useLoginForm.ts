@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { useGlobalDataContext } from '@/store/hooks';
 import { makeLocalAuthentication } from '@/main/factories';
@@ -14,6 +15,7 @@ export const useLoginForm = () => {
   const [buttonIsDisabled, setButtonIsDisabled] = useState(true);
 
   const { setUser } = useGlobalDataContext();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (loginData.email.length < 6 || loginData.password.length < 6) {
@@ -34,6 +36,7 @@ export const useLoginForm = () => {
     try {
       const response = await authentication.auth(loginData);
       setUser(response);
+      navigate('/');
     } catch (error) {
       setButtonIsDisabled(false);
       setError(error as Error);
