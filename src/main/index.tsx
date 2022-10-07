@@ -5,12 +5,15 @@ import { BrowserRouter } from 'react-router-dom';
 import '../presentation/styles/global.scss';
 
 import { Routes } from '@/presentation/router';
+import { GlobalDataProvider } from '@/store/contexts/globalData';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <GlobalDataProvider>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </GlobalDataProvider>
   </React.StrictMode>,
   document.getElementById('main')
 );
