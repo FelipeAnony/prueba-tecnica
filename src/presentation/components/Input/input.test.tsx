@@ -19,7 +19,7 @@ const renderSut = () => {
   );
 };
 
-describe('Login Header component', () => {
+describe('Input component', () => {
   beforeEach(() => renderSut());
 
   it('Should render appropiately without any error', () => {

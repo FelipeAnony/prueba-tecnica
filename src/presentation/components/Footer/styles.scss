@@ -1,0 +1,12 @@
+@import '../../styles/colors';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $primary-color-extraDark;
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  color: white;
+}

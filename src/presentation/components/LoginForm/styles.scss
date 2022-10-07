@@ -1,0 +1,14 @@
+@import '../../styles/colors';
+
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 20px);
+  max-width: 500px;
+  height: 300px;
+  border-radius: 4px;
+  background-color: #ededed;
+  box-shadow: 0 0 4px 1px $primary-color-dark;
+  padding: 10px;
+} 

@@ -10,7 +10,7 @@ type Props = {
 const Input: React.FC<Props> = (props) => {
   return (
     <div className={Styles.inputContainer}>
-      <label>{props.label}</label>
+      <label htmlFor={props.id}>{props.label}</label>
       <input {...props} />
     </div>
   );
