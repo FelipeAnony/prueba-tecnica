@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import '../presentation/styles/global.scss';
 
 import { Routes } from '@/presentation/router';
-import { GlobalDataProvider } from '@/store/contexts/globalData';
+import { GlobalDataProvider } from '@/store/contexts';
 
 ReactDOM.render(
   <React.StrictMode>
