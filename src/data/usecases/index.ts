@@ -1,1 +1,1 @@
-export * from './localAuthentication/localAuthentication.test';
+export * from './localAuthentication/localAuthentication';
