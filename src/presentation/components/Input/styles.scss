@@ -16,4 +16,9 @@
     border: none;
     margin-top: 5px;
   }
-};
+}
+
+.helpMessage {
+  display: flex;
+  justify-content: space-between;
+}

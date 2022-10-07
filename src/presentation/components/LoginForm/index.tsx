@@ -1,4 +1,4 @@
-import { HelpMessage, Input, ErrorMessage, Button } from '../';
+import { Input, ErrorMessage, Button } from '../';
 
 import Styles from './styles.scss';
 
@@ -11,13 +11,6 @@ const LoginForm: React.FC = () => {
   return (
     <section className={Styles.loginFormContainer}>
       <h1>Login</h1>
-      <div className={Styles.helpContainer}>
-        <HelpMessage
-          message={
-            'Tu contraseña debe tener entre 6 - 12 caracteres, con al menos una letra mayuscula, una minuscula y un numero.'
-          }
-        />
-      </div>
       <form onSubmit={(e) => e.preventDefault()} className={Styles.loginForm}>
         <Input
           label="Email"
@@ -38,7 +31,8 @@ const LoginForm: React.FC = () => {
           onChange={handleChange}
           type="password"
           value={loginData.password}
-          placeholder="6 - 12 alfanumeric characters"
+          placeholder="Your password"
+          helpMessage="Tu contraseña debe tener entre 6 - 12 caracteres, con al menos una letra mayuscula, una minuscula y un numero."
           required
         />
 
