@@ -1,4 +1,5 @@
 import { useRoutes } from 'react-router-dom';
+
 import { HomePage, LoginPage } from '@/presentation/pages';
 
 const Routes: React.FC = () =>

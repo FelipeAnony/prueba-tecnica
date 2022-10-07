@@ -1,4 +1,5 @@
-import PrivateRoute from '@/presentation/components/PrivateRoute';
+import { PrivateRoute } from '@/presentation/components';
+
 import { useGlobalDataContext } from '@/store/hooks';
 
 const HomePage: React.FC = () => {

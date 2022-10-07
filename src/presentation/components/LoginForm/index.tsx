@@ -1,7 +1,4 @@
-import Button from '../Button';
-import ErrorMessage from '../ErrorMessage';
-import HelpMessage from '../HelpMessage';
-import Input from '../Input';
+import { HelpMessage, Input, ErrorMessage, Button } from '../';
 
 import Styles from './styles.scss';
 
