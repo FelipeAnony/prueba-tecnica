@@ -1,5 +1,5 @@
 import { useRoutes } from 'react-router-dom';
-import LoginPage from '../pages/Login';
+import { LoginPage } from '@/presentation/pages';
 
 const Routes: React.FC = () =>
   useRoutes([

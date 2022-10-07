@@ -22,9 +22,10 @@ const LoginForm: React.FC = () => {
         name="password"
         onChange={() => null}
         type="password"
+        placeholder="Your password"
         required
       />
-      <div>
+      <div className={Styles.buttonContainer}>
         <Button onClick={() => null}>Login</Button>
       </div>
     </section>

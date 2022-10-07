@@ -1,7 +1,4 @@
-import Footer from '@/presentation/components/Footer';
-import LoginForm from '@/presentation/components/LoginForm';
-import LoginHeader from '@/presentation/components/LoginHeader';
-
+import { Footer, LoginForm, LoginHeader } from '@/presentation/components';
 import Styles from './styles.scss';
 
 const LoginPage: React.FC = () => {
