@@ -1,0 +1,69 @@
+@import '../../styles/colors';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $primary-color-mid;
+  width: 100%;
+  height: 100px;
+
+  * {
+    color: white;
+  }
+}
+
+.innerContainer {
+  width: 100%;
+  padding: 0 4px;
+  height: 75%;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+}
+
+.downLine {
+  width: 100%;
+  height: 25%;
+  background-color: $primary-color-dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  font-size: 18px;
+  padding: 2px;
+  border: solid 2px white;
+  border-radius: 1px 6px;
+}
+
+.userInfo {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  padding: 4px;
+  transition: all ease-in-out .3s;
+}
+
+.userIcon {
+  font-size: 16px;
+  border: solid 1px white;
+  border-radius: 50%;
+  padding: 1px;
+}
+
+.userName {
+  margin: 0 4px;
+}
+
+.loginButtonContainer {
+  margin-left: auto;
+  
+  span {
+    display: flex;
+    width: 60px;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
