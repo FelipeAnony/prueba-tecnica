@@ -26,11 +26,10 @@ describe('HttpClient adapter', () => {
 
   it('Should return the correct value on success case', async () => {
     const sut = makeSut();
-    const { status, data } = fetchMockSuccessReturn;
 
     expect(await sut.get('any-url')).toEqual({
-      statusCode: status,
-      body: data,
+      statusCode: 200,
+      body: fetchMockSuccessReturn,
     });
   });
 });

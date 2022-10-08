@@ -7,8 +7,8 @@ export class HttpFetchClientAdapter implements HttpClient {
     const formattedResponse = await response.json();
 
     return {
-      statusCode: formattedResponse.status,
-      body: formattedResponse.data,
+      statusCode: response.status,
+      body: formattedResponse,
     };
   }
 }
