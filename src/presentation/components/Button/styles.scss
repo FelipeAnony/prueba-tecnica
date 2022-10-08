@@ -37,6 +37,7 @@
 .clear {
   @extend .button;
   border: none;
+  background-color: transparent;
 }
 
 .disabled {
