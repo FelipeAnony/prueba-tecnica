@@ -1,39 +1,15 @@
 import { faker } from '@faker-js/faker';
 
-import { HttpClient } from '@/data/protocols';
-import { HttpResponse } from '@/domain/protocols';
-
-const fetchMock = jest.fn(
-  (
-    input: RequestInfo | URL,
-    init?: RequestInit | undefined
-  ): Promise<Response> => {
-    return Promise.resolve({
-      json: () => Promise.resolve({ status: 200, data: { data: 'any-data' } }),
-    } as Response);
-  }
-);
+import { fetchMock, fetchMockSuccessReturn } from '@/infra/mocks';
+import { HttpFetchClientAdapter } from './httpFetchClientAdapter';
 
 global.fetch = fetchMock;
 
-const makeSut = () => {
-  class HttpFetchClientAdapter implements HttpClient {
-    async get(url: string): Promise<HttpResponse> {
-      const response = await fetch(url);
-      const formattedResponse = await response.json();
-
-      return {
-        statusCode: formattedResponse.status,
-        body: formattedResponse.data,
-      };
-    }
-  }
-  return { sut: new HttpFetchClientAdapter() };
-};
+const makeSut = () => new HttpFetchClientAdapter();
 
 describe('HttpClient adapter', () => {
   it('Should call fetch with correct params when get method is called', () => {
-    const { sut } = makeSut();
+    const sut = makeSut();
     const url = faker.internet.url();
     sut.get(url);
 
@@ -41,7 +17,7 @@ describe('HttpClient adapter', () => {
   });
 
   it('Should throw if fetch throws', () => {
-    const { sut } = makeSut();
+    const sut = makeSut();
     fetchMock.mockRejectedValueOnce(new Error('any-error'));
     const url = faker.internet.url();
 
@@ -49,11 +25,12 @@ describe('HttpClient adapter', () => {
   });
 
   it('Should return the correct value on success case', async () => {
-    const { sut } = makeSut();
+    const sut = makeSut();
+    const { status, data } = fetchMockSuccessReturn;
 
     expect(await sut.get('any-url')).toEqual({
-      statusCode: 200,
-      body: { data: 'any-data' },
+      statusCode: status,
+      body: data,
     });
   });
 });
