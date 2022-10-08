@@ -17,7 +17,7 @@ const makeHttpGetClientStub = () => {
 
 const makeSut = () => {
   class RemotePosts implements Posts {
-    private posts: PostModel[] = [];
+    private postsList: PostModel[] = [];
 
     constructor(
       private readonly url: string,
@@ -26,15 +26,17 @@ const makeSut = () => {
 
     async getPostsFromDB(): Promise<HttpResponse> {
       const response = await this.httpGetClient.get(this.url);
-      if (response.statusCode === 200) this.posts = response.body;
+      if (response.statusCode === 200) this.postsList = response.body;
       return response;
     }
 
     getPosts(): PostModel[] {
-      return this.posts;
+      return this.postsList;
     }
 
-    addPost(post: PostModel): void {}
+    addPost(post: PostModel): void {
+      this.postsList.push(post);
+    }
 
     removePost(postId: number): void {}
 
@@ -49,6 +51,13 @@ const makeSut = () => {
     HttpGetClientStub,
     url,
   };
+};
+
+const postMock: PostModel = {
+  body: 'any-body',
+  id: 1,
+  title: 'any-title',
+  userId: 'any-id',
 };
 
 describe('RemotePosts usecase', () => {
@@ -71,19 +80,19 @@ describe('RemotePosts usecase', () => {
 
   it('Should return the correct value when getPosts method is called', async () => {
     const { sut, HttpGetClientStub } = makeSut();
-    const postMock: PostModel = {
-      body: 'any-body',
-      id: 1,
-      title: 'any-title',
-      userId: 'any-id',
-    };
-
     jest
       .spyOn(HttpGetClientStub, 'get')
       .mockResolvedValueOnce({ statusCode: 200, body: [postMock] });
 
     expect(sut.getPosts()).toEqual([]);
     await sut.getPostsFromDB();
+    expect(sut.getPosts()).toEqual([postMock]);
+  });
+
+  it('Should add new post to list when addPost method is called', () => {
+    const { sut } = makeSut();
+    expect(sut.getPosts()).toEqual([]);
+    sut.addPost(postMock);
     expect(sut.getPosts()).toEqual([postMock]);
   });
 });
