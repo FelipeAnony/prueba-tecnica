@@ -1,5 +1,4 @@
 export const fetchMockSuccessReturn = {
-  status: 200,
   data: { data: 'any-data' },
 };
 
@@ -9,6 +8,7 @@ export const fetchMock = jest.fn(
     init?: RequestInit | undefined
   ): Promise<Response> => {
     return Promise.resolve({
+      status: 200,
       json: () => Promise.resolve(fetchMockSuccessReturn),
     } as Response);
   }
