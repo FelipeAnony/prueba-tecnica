@@ -7,9 +7,15 @@ type Props = {
   children: JSX.Element;
 };
 
-export const PostsDataContext = createContext({} as PostDataContextType);
+const contextInitialValue: PostDataContextType = {
+  dispatch: () => null,
+  error: null,
+  postsList: [],
+};
 
-const PostsDataContextProvider: React.FC<Props> = ({ children }) => {
+export const PostsDataContext = createContext(contextInitialValue);
+
+export const PostsDataContextProvider: React.FC<Props> = ({ children }) => {
   const { postsList, dispatch, error } = useRemotePosts();
 
   return (
@@ -18,5 +24,3 @@ const PostsDataContextProvider: React.FC<Props> = ({ children }) => {
     </PostsDataContext.Provider>
   );
 };
-
-export default PostsDataContextProvider;

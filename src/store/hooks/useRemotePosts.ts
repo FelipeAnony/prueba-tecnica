@@ -14,7 +14,7 @@ const postListReducer = (
 ): PostModel[] => {
   switch (action.type) {
     case 'UPDATE': {
-      return { ...remotePost.getPosts() };
+      return [...remotePost.getPosts()];
     }
 
     case 'ADD_POST': {
@@ -34,7 +34,7 @@ const postListReducer = (
     }
   }
 
-  return { ...remotePost.getPosts() };
+  return [...remotePost.getPosts()];
 };
 
 export const useRemotePosts = () => {
