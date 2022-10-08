@@ -38,7 +38,9 @@ const makeSut = () => {
       this.postsList.push(post);
     }
 
-    removePost(postId: number): void {}
+    removePost(postId: number): void {
+      this.postsList = this.postsList.filter((e) => e.id !== postId);
+    }
 
     editPost(postId: number, newData: PostModel): void {}
   }
@@ -94,5 +96,14 @@ describe('RemotePosts usecase', () => {
     expect(sut.getPosts()).toEqual([]);
     sut.addPost(postMock);
     expect(sut.getPosts()).toEqual([postMock]);
+  });
+
+  it('Should remove the correct post from list when removePost method is called', () => {
+    const { sut } = makeSut();
+    sut.addPost(postMock);
+    expect(sut.getPosts()).toEqual([postMock]);
+
+    sut.removePost(postMock.id);
+    expect(sut.getPosts()).toEqual([]);
   });
 });
