@@ -1,6 +1,7 @@
+import { faker } from '@faker-js/faker';
+
 import { HttpClient } from '@/data/protocols';
 import { HttpResponse } from '@/domain/protocols';
-import { faker } from '@faker-js/faker';
 
 const fetchMock = jest.fn(
   (
@@ -33,5 +34,13 @@ describe('HttpClient adapter', () => {
     sut.get(url);
 
     expect(fetchMock).toBeCalledWith(url);
+  });
+
+  it('Should throw if fetch throws', () => {
+    const { sut } = makeSut();
+    fetchMock.mockRejectedValueOnce(new Error('any-error'));
+    const url = faker.internet.url();
+
+    expect(sut.get(url)).rejects.toThrow(new Error('any-error'));
   });
 });
