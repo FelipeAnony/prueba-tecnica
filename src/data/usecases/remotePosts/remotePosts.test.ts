@@ -42,7 +42,10 @@ const makeSut = () => {
       this.postsList = this.postsList.filter((e) => e.id !== postId);
     }
 
-    editPost(postId: number, newData: PostModel): void {}
+    editPost(postId: number, newData: PostModel): void {
+      const postIndex = this.postsList.findIndex((e) => e.id === postId);
+      this.postsList[postIndex] = newData;
+    }
   }
 
   const url = faker.internet.url();
@@ -105,5 +108,13 @@ describe('RemotePosts usecase', () => {
 
     sut.removePost(postMock.id);
     expect(sut.getPosts()).toEqual([]);
+  });
+
+  it('Should edit the correct item from list when editPost method is called', () => {
+    const { sut } = makeSut();
+    sut.addPost(postMock);
+    expect(sut.getPosts()[0].title).toBe('any-title');
+    sut.editPost(postMock.id, { ...postMock, title: 'new-title' });
+    expect(sut.getPosts()[0].title).toBe('new-title');
   });
 });
