@@ -1,8 +1,9 @@
+import { faker } from '@faker-js/faker';
+
 import { HttpGetClient } from '@/data/protocols';
 import { PostModel } from '@/domain/models';
 import { HttpResponse } from '@/domain/protocols';
 import { Posts } from '@/domain/usecases';
-import { faker } from '@faker-js/faker';
 
 const makeHttpGetClientStub = () => {
   class HttpGetClientStub implements HttpGetClient {
@@ -16,6 +17,8 @@ const makeHttpGetClientStub = () => {
 
 const makeSut = () => {
   class RemotePosts implements Posts {
+    private posts: PostModel[] = [];
+
     constructor(
       private readonly url: string,
       private readonly httpGetClient: HttpGetClient
@@ -23,11 +26,12 @@ const makeSut = () => {
 
     async getPostsFromDB(): Promise<HttpResponse> {
       const response = await this.httpGetClient.get(this.url);
+      if (response.statusCode === 200) this.posts = response.body;
       return response;
     }
 
     getPosts(): PostModel[] {
-      return [];
+      return this.posts;
     }
 
     addPost(post: PostModel): void {}
@@ -48,11 +52,38 @@ const makeSut = () => {
 };
 
 describe('RemotePosts usecase', () => {
-  it('Should calls HttpGetClient get method with correct params', () => {
+  it('Should calls HttpGetClient get method with correct params when getPostFromDB is called', () => {
     const { sut, HttpGetClientStub, url } = makeSut();
     const httpGetClientSpy = jest.spyOn(HttpGetClientStub, 'get');
     sut.getPostsFromDB();
 
     expect(httpGetClientSpy).toBeCalledWith(url);
+  });
+
+  it('Should throw if HttpGetClient throws', () => {
+    const { sut, HttpGetClientStub } = makeSut();
+    jest.spyOn(HttpGetClientStub, 'get').mockImplementationOnce(() => {
+      throw new Error('any-error');
+    });
+
+    expect(sut.getPostsFromDB()).rejects.toThrow();
+  });
+
+  it('Should return the correct value when getPosts method is called', async () => {
+    const { sut, HttpGetClientStub } = makeSut();
+    const postMock: PostModel = {
+      body: 'any-body',
+      id: 1,
+      title: 'any-title',
+      userId: 'any-id',
+    };
+
+    jest
+      .spyOn(HttpGetClientStub, 'get')
+      .mockResolvedValueOnce({ statusCode: 200, body: [postMock] });
+
+    expect(sut.getPosts()).toEqual([]);
+    await sut.getPostsFromDB();
+    expect(sut.getPosts()).toEqual([postMock]);
   });
 });
