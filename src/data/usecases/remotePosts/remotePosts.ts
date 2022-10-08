@@ -31,6 +31,8 @@ export class RemotePosts implements Posts {
 
   editPost(postId: number, newData: PostModel): void {
     const postIndex = this.postsList.findIndex((e) => e.id === postId);
-    this.postsList[postIndex] = newData;
+    if (postIndex >= 0) {
+      this.postsList[postIndex] = newData;
+    }
   }
 }
