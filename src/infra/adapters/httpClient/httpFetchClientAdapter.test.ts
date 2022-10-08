@@ -21,7 +21,11 @@ const makeSut = () => {
     async get(url: string): Promise<HttpResponse> {
       const response = await fetch(url);
       const formattedResponse = await response.json();
-      return { statusCode: response.status, body: formattedResponse };
+
+      return {
+        statusCode: formattedResponse.status,
+        body: formattedResponse.data,
+      };
     }
   }
   return { sut: new HttpFetchClientAdapter() };
@@ -42,5 +46,14 @@ describe('HttpClient adapter', () => {
     const url = faker.internet.url();
 
     expect(sut.get(url)).rejects.toThrow(new Error('any-error'));
+  });
+
+  it('Should return the correct value on success case', async () => {
+    const { sut } = makeSut();
+
+    expect(await sut.get('any-url')).toEqual({
+      statusCode: 200,
+      body: { data: 'any-data' },
+    });
   });
 });
