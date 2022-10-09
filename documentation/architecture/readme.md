@@ -1,29 +1,29 @@
-**_ Notas _**
+**Notas**
 
 - Toda la arquitectura de esta aplicación se basa en mi interpretación actual de Clean Architecture y su integracion con React.
 
 - El objetivo es estructurar el sistema para que las responsabilidades de cada parte estén bien distribuidas, respetando una estricta regla de dependencia, que garantice un sistema fácil de mantener, fácil de agregar nuevas funcionalidades y fácil de testear. Una vez que todo este bien implementado, debería ser posible cambiar cualquier tipo de librería o servicio externo con facilidad. Incluso el propio React debería ser posible de cambiar con facilidad, reutilizando el máximo de código posible, sin necesidad de cambiar el "Core" de la aplicación. En este abordaje, los componentes de React tienen como única responsabilidad, renderizar elementos en el DOM y hacer el bindig de eventos. Los Custom hooks sirven como puente entre el core de la aplicación, los componentes y los recursos de React.
 
-Si por algún motivo tenemos que cambiar de React para Vue, por ejemplo, no tendríamos que cambiar ninguna línea de código del core de la aplicación, apenas cambiaríamos las cosas específicas de React.
+- Si por algún motivo tenemos que cambiar de React para Vue, por ejemplo, no tendríamos que cambiar ninguna línea de código del core de la aplicación, apenas cambiaríamos las cosas específicas de React.
 Lo mismo pasa con otras partes del sistema. Si fuera necesario cambiar el actual httpFetchClient para utilizar Axios o cualquier otra librería, únicamente tendríamos que crear un httpAxiosClient que implemente el protocolo de httpClient y todo sigue funcionando normalmente sin necesidad de cambiar nada más.
 
-**_significado de los nombres utilizados en archivos: _**
-remote\*\*.ts: Cualquier usecase de data layer que tiene que hacer peticiones a servicios externos.
+**Significado de los nombres utilizados en archivos:**
+- remote\*\*.ts: Cualquier usecase de data layer que tiene que hacer peticiones a servicios externos.
 
-local\*\*.ts: Cualquier usecase de data layer que trabaja unicamente con recursos en cache.
+- local\*\*.ts: Cualquier usecase de data layer que trabaja unicamente con recursos en cache.
 
-\*\*Adapter.ts: Cualquier adapter. (Generalmete utilizado para implementar inversion de dependencias entre el data y infra layer.)
+- \*\*Adapter.ts: Cualquier adapter. (Generalmete utilizado para implementar inversion de dependencias entre el data y infra layer.)
 
-**_ Camadas _**
-domain => Reglas de negocio. Solo debería cambiar si las reglas de negocio también cambiaren, no debería modificarse si cambiamos una librería por ejemplo. En esa camada solo existen abstracciones.
+**Camadas**
+- domain => Reglas de negocio. Solo debería cambiar si las reglas de negocio también cambiaren, no debería modificarse si cambiamos una librería por ejemplo. En esa camada solo existen abstracciones.
 
-data => Reglas de aplicación. Aquí tenemos las implementaciones del domain. Solo debería cambiar para atender los protocolos del domain. Tampoco debería ser modificado en el caso de cambiar una librería.
+- data => Reglas de aplicación. Aquí tenemos las implementaciones del domain. Solo debería cambiar para atender los protocolos del domain. Tampoco debería ser modificado en el caso de cambiar una librería.
 
-infra => Camada donde implementamos las depedencias de data layer, los adapters. En el caso de tener que cambiar cualquier librería del proyecto, excepto de React que pertenece al presentation layer, hacemos el cambio aquí creando un nuevo adapter. De esta manera, ninguna otra parte de la aplicación tiene que ser alterada en el caso de cambiar una librería.
+- infra => Camada donde implementamos las depedencias de data layer, los adapters. En el caso de tener que cambiar cualquier librería del proyecto, excepto de React que pertenece al presentation layer, hacemos el cambio aquí creando un nuevo adapter. De esta manera, ninguna otra parte de la aplicación tiene que ser alterada en el caso de cambiar una librería.
 
-main => Entry point del proyecto. Además del index, tenemos archivos útiles al proyecto y hacemos la composición de los usecases de data layer con sus debidas dependencias, utilizando factories.
+- main => Entry point del proyecto. Además del index, tenemos archivos útiles al proyecto y hacemos la composición de los usecases de data layer con sus debidas dependencias, utilizando factories.
 
-presentation => Recursos que componen la interfaz de usuario, en este caso, los recursos de React.
+- presentation => Recursos que componen la interfaz de usuario, en este caso, los recursos de React.
 
-**_ps:_**
+**ps:**
 Hice algunos comentarios en algunos puntos que juzgué necesario, pero lo hice únicamente por tratarse de una prueba técnica. Normalmente, en lugar de utilizar comentarios, busco hacer que el código sea simple y autoexplicativo.
