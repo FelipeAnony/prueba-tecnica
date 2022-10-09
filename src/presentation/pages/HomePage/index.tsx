@@ -1,5 +1,11 @@
-import { PrivateRoute, Header, Footer } from '@/presentation/components';
+import {
+  PrivateRoute,
+  Header,
+  Footer,
+  CardsContainer,
+} from '@/presentation/components';
 
+import { PostsDataContextProvider } from '@/store/contexts';
 import { useGlobalDataContext } from '@/store/hooks';
 
 const HomePage: React.FC = () => {
@@ -9,6 +15,9 @@ const HomePage: React.FC = () => {
     <PrivateRoute auth={true} redirectOnFailTo="/login">
       <>
         <Header />
+        <PostsDataContextProvider>
+          <CardsContainer />
+        </PostsDataContextProvider>
         <Footer />
       </>
     </PrivateRoute>

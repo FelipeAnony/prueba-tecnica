@@ -1,0 +1,84 @@
+@import '../../styles/colors';
+
+.postCard {
+  padding: 6px;
+  border: solid 2px $primary-color-mid;
+  background-color: #ddd;
+  margin-top: 10px;
+  border-radius: 1px 8px;
+  width: 100%;
+  max-width: 600px;
+  height: 200px;
+  display: grid;
+  grid-template-rows: 45% 45%;
+  grid-template-columns: 30% 70%;
+  grid-template-areas: 
+    'image title'
+    'body body';
+}
+
+.imgContainer {
+  grid-area: image;
+  display: flex;
+  margin-right: 15px;
+  background-color: #ccc;
+  justify-content: center;
+  align-items: center;
+  font-size: 38px;
+  border-radius: 4px;
+}
+
+.titleContainer {
+  grid-area: title;
+}
+
+.title {
+  font-size: 16px;
+}
+
+.userId {
+  margin-top: 5px;
+}
+
+.cardOptions {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+
+  svg {
+    padding: 4px;
+    width: 23px;
+    height: 23px;
+    
+    &:hover {
+      background-color: #ccc;
+      transition: all ease .3s;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+}
+
+.downContainer {
+  width: 100%;
+  margin-top: 20px;
+  height: 80px;
+  grid-area: body;
+}
+
+.body {
+  border: solid 1px $primary-color-dark;
+  height: 57px;
+  padding: 4px;
+  border-radius: 3px;
+}
+
+@media (min-width: 921px) {
+  .postCard {
+    max-width: 450px;
+    margin: 10px 10px 0 0;
+  }
+}

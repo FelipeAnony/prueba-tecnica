@@ -6,20 +6,22 @@ import Button from '../Button';
 import Styles from './styles.scss';
 import { useHeader } from './useHeader';
 
-const Header = () => {
+const Header: React.FC = () => {
   const { user, handleLogout } = useHeader();
 
   return (
     <header className={Styles.header}>
-      <section className={Styles.innerContainer}>
+      <div className={Styles.innerContainer}>
         <span className={Styles.logo}>SocialCards</span>
-      </section>
+      </div>
 
-      <div className={Styles.downLine}>
+      <section className={Styles.downLine}>
         <div className={Styles.innerContainer}>
           <div className={Styles.userInfo}>
             <AiOutlineUser className={Styles.userIcon} />
+
             <span className={Styles.userName}>{user?.user}</span>
+
             <div className={Styles.loginButtonContainer}>
               <Button onClick={handleLogout} style="clear">
                 <span>
@@ -30,7 +32,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </header>
   );
 };
