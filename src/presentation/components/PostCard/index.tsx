@@ -7,6 +7,7 @@ import {
 } from 'react-icons/ai';
 
 import { PostModel } from '@/domain/models';
+
 import Modal from '../Modal';
 import { usePostCard } from './usePostCard';
 

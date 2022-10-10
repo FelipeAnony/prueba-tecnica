@@ -7,4 +7,7 @@ export { default as HelpMessage } from './HelpMessage';
 export { default as Input } from './Input';
 export { default as LoginForm } from './LoginForm';
 export { default as LoginHeader } from './LoginHeader';
+export { default as LogoSpinner } from './LogoSpinner';
+export { default as Modal } from './Modal';
+export { default as PostCard } from './PostCard';
 export { default as PrivateRoute } from './PrivateRoute';

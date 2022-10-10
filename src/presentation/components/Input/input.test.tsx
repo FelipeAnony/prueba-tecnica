@@ -12,6 +12,9 @@ const onChange = jest.fn(() => {});
 const renderSut = () => {
   render(
     <Input
+      id="any-id"
+      name="any-name"
+      type="text"
       label="any-label"
       placeholder="any-placeholder"
       helpMessage="any-help-message"
