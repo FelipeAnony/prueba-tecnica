@@ -5,13 +5,16 @@ import PostCard from '../PostCard';
 import Styles from './styles.scss';
 
 const CardsContainer: React.FC = () => {
-  const { postsList } = useCardsContainer();
+  const { postsToRender } = useCardsContainer();
 
   return (
     <main className={Styles.cardsContainer}>
-      {postsList.map((e) => (
-        <PostCard key={e.id} {...e} />
-      ))}
+      <article className={Styles.innerContainer}>
+        {postsToRender.map((e) => (
+          <PostCard key={e.id} {...e} />
+        ))}
+      </article>
+      <div id="end"></div>
     </main>
   );
 };
