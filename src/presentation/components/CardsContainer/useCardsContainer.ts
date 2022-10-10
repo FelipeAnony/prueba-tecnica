@@ -12,7 +12,7 @@ export const useCardsContainer = () => {
   const observerCallback: IntersectionObserverCallback = (entries) => {
     entries.forEach((e) => {
       if (e.isIntersecting) {
-        setItemsToRenderAmount((state) => state + 5);
+        setItemsToRenderAmount((state) => state + 10);
       }
     });
   };
