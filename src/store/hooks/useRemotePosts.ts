@@ -1,58 +1,44 @@
-import { useEffect, useReducer, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 import { PostModel } from '@/domain/models';
-import { makeRemotePosts } from '@/main/factories/makeRemotePosts';
-
-import { ActionType } from '../types';
-
-export type Actions = 'ADD_POST' | 'EDIT_POST' | 'REMOVE_POST' | 'UPDATE';
-const remotePost = makeRemotePosts();
-
-const postListReducer = (
-  state: PostModel[],
-  action: ActionType<Actions>
-): PostModel[] => {
-  switch (action.type) {
-    case 'UPDATE': {
-      return [...remotePost.getPosts()];
-    }
-
-    case 'ADD_POST': {
-      action.payload && remotePost.addPost(action.payload.post);
-      break;
-    }
-
-    case 'REMOVE_POST': {
-      action.payload && remotePost.removePost(action.payload.postId);
-      break;
-    }
-
-    case 'EDIT_POST': {
-      action.payload &&
-        remotePost.editPost(action.payload.postId, action.payload.post);
-      break;
-    }
-  }
-
-  return [...remotePost.getPosts()];
-};
+import { makeRemotePosts } from '@/main/factories';
 
 export const useRemotePosts = () => {
-  const [postsList, dispatch] = useReducer(postListReducer, []);
+  const [postsList, setPostsList] = useState<PostModel[]>([]);
   const [error, setError] = useState<Error | null>(null);
+
+  const { current: remotePosts } = useRef(makeRemotePosts());
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        await remotePost.getPostsFromDB();
-        dispatch({ type: 'UPDATE' });
+        const response = await remotePosts.getPostsFromDB();
+        setPostsList(response.body);
       } catch (error) {
         setError(error as Error);
       }
     };
-
     loadData();
   }, []);
 
-  return { postsList, dispatch, error };
+  const syncRemotePostAndState = () => {
+    setPostsList([...remotePosts.getPosts()]);
+  };
+
+  const addPost = (post: PostModel) => {
+    remotePosts.addPost(post);
+    syncRemotePostAndState();
+  };
+
+  const removePost = (postId: number) => {
+    remotePosts.removePost(postId);
+    syncRemotePostAndState();
+  };
+
+  const editPost = (postId: number, newPostData: PostModel) => {
+    remotePosts.editPost(postId, newPostData);
+    syncRemotePostAndState();
+  };
+
+  return { addPost, removePost, editPost, error, postsList };
 };
