@@ -17,7 +17,11 @@ export const useCardsContainer = () => {
     });
   };
 
-  const { setElement } = useObserver(observerCallback);
+  const observerOptions: IntersectionObserverInit = {
+    rootMargin: '40% 0px 0px 0px',
+  };
+
+  const { setElement } = useObserver(observerCallback, observerOptions);
 
   useEffect(() => {
     const element = document.getElementById('end');
