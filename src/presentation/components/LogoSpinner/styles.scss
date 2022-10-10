@@ -1,0 +1,45 @@
+@import '../../styles/colors';
+
+.logoSpinner {
+  display: flex;
+  width: 100px;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $primary-color-dark;
+}
+
+.logoLetters {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.spinner {
+  width: 100px;
+  height: 30px;
+  border: solid 2px $primary-color-extraDark;
+  border-radius: 2px 6px;
+  animation: logoSpinner 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.loading {
+  font-size: 12px;
+}
+
+@keyframes logoSpinner {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(600deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateX(1400deg);
+  }
+}
