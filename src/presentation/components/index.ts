@@ -1,5 +1,6 @@
 export { default as Button } from './Button';
 export { default as CardsContainer } from './CardsContainer';
+export { default as DeleteConfirmation } from './DeleteConfirmation';
 export { default as ErrorMessage } from './ErrorMessage';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';

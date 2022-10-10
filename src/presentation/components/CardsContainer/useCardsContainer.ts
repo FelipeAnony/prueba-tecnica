@@ -6,7 +6,7 @@ import { useObserver } from '@/presentation/hooks';
 
 export const useCardsContainer = () => {
   const { error, postsList } = usePostsDataContext();
-  const [itemsToRenderAmount, setItemsToRenderAmount] = useState(10);
+  const [itemsToRenderAmount, setItemsToRenderAmount] = useState(0);
   const [postsToRender, setPostsToRender] = useState([] as PostModel[]);
 
   const observerCallback: IntersectionObserverCallback = (entries) => {
@@ -31,14 +31,8 @@ export const useCardsContainer = () => {
   }, []);
 
   useEffect(() => {
-    if (postsToRender.length < 1) {
-      setPostsToRender(postsList.slice(0, 10));
-    }
-  }, [postsList]);
-
-  useEffect(() => {
     setPostsToRender(postsList.slice(0, itemsToRenderAmount));
-  }, [itemsToRenderAmount]);
+  }, [itemsToRenderAmount, postsList]);
 
   return { error, postsToRender };
 };

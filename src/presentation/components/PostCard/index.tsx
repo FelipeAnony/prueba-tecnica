@@ -12,6 +12,8 @@ import Modal from '../Modal';
 import { usePostCard } from './usePostCard';
 
 import Styles from './styles.scss';
+import DeleteConfirmation from '../DeleteConfirmation';
+import { usePostsDataContext } from '@/store/hooks';
 
 const PostCard: React.FC<PostModel> = ({ body, id, title, userId }) => {
   const {
@@ -23,6 +25,8 @@ const PostCard: React.FC<PostModel> = ({ body, id, title, userId }) => {
     openEditModal,
     openDeleteModal,
   } = usePostCard();
+
+  const { removePost } = usePostsDataContext();
 
   return (
     <>
@@ -49,7 +53,15 @@ const PostCard: React.FC<PostModel> = ({ body, id, title, userId }) => {
       </section>
       {modalIsOpen && (
         <Modal closeModalFn={closeModal}>
-          {modalContent === 'editModal' ? <>edit</> : <>delete</>}
+          {modalContent === 'editModal' ? (
+            <>edit</>
+          ) : (
+            <DeleteConfirmation
+              name={title}
+              cancelDeleteFn={closeModal}
+              deleteFn={() => removePost(id)}
+            />
+          )}
         </Modal>
       )}
     </>
