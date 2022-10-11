@@ -1,8 +1,6 @@
 {
-  "header": {
-    "logout": "Cerrar sesión"
-  },
-  "addPostForm": {},
-  "cardsContainer": {},
-  "footer": {}
+  "translation": {
+    "logout": "Cerrar sesión",
+    "user": "usuário:"
+  }
 }

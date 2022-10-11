@@ -1,5 +1,6 @@
 import { AiOutlineUser } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 
 import Button from '../Button';
 
@@ -8,6 +9,7 @@ import { useHeader } from './useHeader';
 
 const Header: React.FC = () => {
   const { user, handleLogout } = useHeader();
+  const { t, i18n } = useTranslation();
 
   return (
     <header className={Styles.header}>
@@ -26,7 +28,7 @@ const Header: React.FC = () => {
               <Button onClick={handleLogout} style="clear">
                 <span>
                   <FiLogOut />
-                  Logout
+                  {t('logout')}
                 </span>
               </Button>
             </div>
