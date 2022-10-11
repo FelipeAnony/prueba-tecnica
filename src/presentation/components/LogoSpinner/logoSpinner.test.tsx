@@ -7,7 +7,7 @@ import LogoSpinner from '.';
 
 const renderSut = () => render(<LogoSpinner />);
 
-describe('Login Header component', () => {
+describe('LogoSpinner component', () => {
   it('Should render appropiately without any error', () => {
     renderSut();
     expect(screen.getByText(/socialcards/i)).toBeInTheDocument();

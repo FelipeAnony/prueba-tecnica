@@ -9,7 +9,11 @@ type Props = {
 
 const Modal: React.FC<Props> = ({ closeModalFn, children }) => {
   return (
-    <div onClick={closeModalFn} className={Styles.modalWindow}>
+    <div
+      data-testid="modalOutContainer"
+      onClick={closeModalFn}
+      className={Styles.modalWindow}
+    >
       <section
         onClick={(e) => e.stopPropagation()}
         className={Styles.modalContainer}
