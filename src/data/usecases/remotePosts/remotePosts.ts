@@ -22,7 +22,7 @@ export class RemotePosts implements Posts {
   }
 
   addPost(post: PostModel): void {
-    this.postsList.push(post);
+    this.postsList.unshift(post);
   }
 
   removePost(postId: number): void {
