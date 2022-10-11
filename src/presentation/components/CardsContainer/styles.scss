@@ -2,6 +2,12 @@
   width: 100%;
   min-height: calc(100vh - 250px);
 
+  .errorContainer {
+    width: calc(100% - 20px);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
   .innerContainer {
     width: 100%;
     max-width: 920px;

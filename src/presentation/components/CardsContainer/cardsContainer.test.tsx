@@ -28,6 +28,13 @@ describe('CardsContainer component', () => {
     ).toBeInTheDocument();
   });
 
+  it('Should render error message when an error exists', () => {
+    mockUseCardsContainer(new Error(), []);
+    renderSut();
+
+    expect(screen.getByText('Error: cannot get posts')).toBeInTheDocument();
+  });
+
   it('Should render spinner loading when postsToRender is empty', () => {
     mockUseCardsContainer(null, []);
     renderSut();
