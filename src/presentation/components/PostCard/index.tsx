@@ -44,11 +44,14 @@ const PostCard: React.FC<PostModel> = ({ body, id, title, userId }) => {
         <div className={Styles.downContainer}>
           <p className={Styles.body}>{body}</p>
           <div className={Styles.cardOptions}>
-            <div onClick={handleLikeClick}>
+            <div data-testid="heartContainer" onClick={handleLikeClick}>
               {like ? <AiFillHeart /> : <AiOutlineHeart />}
             </div>
-            <AiOutlineEdit onClick={openEditModal} />
-            <AiOutlineDelete onClick={openDeleteModal} />
+            <AiOutlineEdit data-testid="editIcon" onClick={openEditModal} />
+            <AiOutlineDelete
+              data-testid="deleteIcon"
+              onClick={openDeleteModal}
+            />
           </div>
         </div>
       </section>
