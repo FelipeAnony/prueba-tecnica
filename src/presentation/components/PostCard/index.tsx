@@ -43,6 +43,7 @@ const PostCard: React.FC<PostModel> = ({ body, id, title, userId }) => {
 
         <div className={Styles.downContainer}>
           <p className={Styles.body}>{body}</p>
+
           <div className={Styles.cardOptions}>
             <div data-testid="heartContainer" onClick={handleLikeClick}>
               {like ? <AiFillHeart /> : <AiOutlineHeart />}
