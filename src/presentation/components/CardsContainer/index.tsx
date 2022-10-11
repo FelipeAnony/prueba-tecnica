@@ -9,7 +9,7 @@ const CardsContainer: React.FC = () => {
   return (
     <main className={Styles.cardsContainer}>
       {postsToRender.length < 1 && (
-        <div className={Styles.spinnerContainer}>
+        <div data-testid="loadingSpinner" className={Styles.spinnerContainer}>
           <LogoSpinner />
         </div>
       )}
