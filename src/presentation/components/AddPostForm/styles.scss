@@ -1,0 +1,50 @@
+@import '../../styles/colors';
+
+.addPostFormContainer {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  margin: 10px auto 0 auto;
+  width: calc(100% - 20px);
+  max-width: 900px;
+  height: 250px;
+  padding: 10px;
+  background-color: #ededed;
+  border-radius: 4px;
+  border: solid 2px $primary-color-mid;
+  transition: all ease .3s;
+
+  .titleContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .arrowIcon {
+      font-size: 18px;
+      align-self: flex-end;
+      transition: all ease .3s;
+      cursor: pointer;
+      border-radius: 50%;
+      padding: 2px;
+      width: 22px;
+      height: 22px;
+
+      &:hover {
+        background-color: #ccc;
+      }
+    }
+
+    .arrowUp {
+      transform: rotate(180deg);
+    }
+  }
+
+  .buttonContainer {
+    margin: 10px auto;
+    width: 60%;
+  }
+}
+
+.containerIsOpen {
+  height: 50px;
+}

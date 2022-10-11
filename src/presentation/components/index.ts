@@ -1,3 +1,4 @@
+export { default as AddPostForm } from './AddPostForm';
 export { default as Button } from './Button';
 export { default as CardsContainer } from './CardsContainer';
 export { default as DeleteConfirmation } from './DeleteConfirmation';
@@ -12,3 +13,4 @@ export { default as LogoSpinner } from './LogoSpinner';
 export { default as Modal } from './Modal';
 export { default as PostCard } from './PostCard';
 export { default as PrivateRoute } from './PrivateRoute';
+export { default as Textarea } from './Textarea';
