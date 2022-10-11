@@ -12,21 +12,17 @@
   background-color: #ededed;
   box-shadow: 0 0 4px 1px $primary-color-dark;
   padding: 20px;
-} 
 
-.loginForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.buttonContainer {
-  width: 60%;
-  margin-top: 30px;
-}
-
-.helpContainer {
-  margin: 10px 10px 0 auto;
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+    .buttonContainer {
+      width: 60%;
+      margin-top: 30px;
+    }
+  }
 }

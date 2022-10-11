@@ -1,6 +1,6 @@
 import { PostModel } from '@/domain/models';
 
-import { Input, Button } from '../';
+import { Input, Button, Textarea } from '../';
 
 import Styles from './styles.scss';
 import { useEditPostForm } from './useEditPostForm';
@@ -37,23 +37,18 @@ const EditPostForm: React.FC<Props> = ({
           value={formData.title}
         />
 
-        <div className={Styles.textareaContainer}>
-          <label className={Styles.textareaLabel} htmlFor="body">
-            Message
-          </label>
-          <textarea
-            className={Styles.textarea}
-            id="body"
-            name="body"
-            onChange={handleChange}
-            value={formData.body}
-          />
-        </div>
+        <Textarea
+          id="body"
+          name="body"
+          onChange={handleChange}
+          value={formData.body}
+        />
 
         <div className={Styles.buttonsContainer}>
           <Button style="outline" onClick={closeFn}>
             Cancel
           </Button>
+
           <Button
             onClick={() => {
               editFn(id, {

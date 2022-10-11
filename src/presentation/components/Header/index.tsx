@@ -22,7 +22,7 @@ const Header: React.FC = () => {
 
             <span className={Styles.userName}>{user?.user}</span>
 
-            <div className={Styles.loginButtonContainer}>
+            <div className={Styles.logoutButtonContainer}>
               <Button onClick={handleLogout} style="clear">
                 <span>
                   <FiLogOut />

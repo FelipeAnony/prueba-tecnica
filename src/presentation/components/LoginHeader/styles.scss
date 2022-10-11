@@ -7,25 +7,27 @@
   background-color: $primary-color-mid;
   width: 100%;
   height: 100px;
-}
+  
+  .innerContainer {
+    width: 100%;
+    height: 75%;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.innerContainer {
-  width: 100%;
-  height: 75%;
-  max-width: 800px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    .logo {
+      font-size: 18px;
+      padding: 2px;
+      border: solid 2px white;
+      border-radius: 1px 6px; 
+      color: white;
+    }
+  }
+  
+  .downLine {
+    width: 100%;
+    height: 25%;
+    background-color: $primary-color-dark;
+  }
 }
-
-.downLine {
-  width: 100%;
-  height: 25%;
-  background-color: $primary-color-dark;
-}
-
-.logo {
-  color: white;
-  font-size: 24px;
-}
-

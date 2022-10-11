@@ -3,6 +3,7 @@ import {
   Header,
   Footer,
   CardsContainer,
+  AddPostForm,
 } from '@/presentation/components';
 
 import { PostsDataContextProvider } from '@/store/contexts';
@@ -16,7 +17,10 @@ const HomePage: React.FC = () => {
       <>
         <Header />
         <PostsDataContextProvider>
-          <CardsContainer />
+          <>
+            <AddPostForm />
+            <CardsContainer />
+          </>
         </PostsDataContextProvider>
         <Footer />
       </>

@@ -11,59 +11,60 @@
   * {
     color: white;
   }
-}
 
-.innerContainer {
-  width: 100%;
-  padding: 0 4px;
-  height: 75%;
-  max-width: 800px;
-  display: flex;
-  align-items: center;
-}
+  .logo {
+    font-size: 18px;
+    padding: 2px;
+    border: solid 2px white;
+    border-radius: 1px 6px; 
+  }
 
-.downLine {
-  width: 100%;
-  height: 25%;
-  background-color: $primary-color-dark;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  font-size: 18px;
-  padding: 2px;
-  border: solid 2px white;
-  border-radius: 1px 6px;
-}
-
-.userInfo {
-  display: flex;
-  width: 100%;
-  align-items: flex-end;
-  padding: 4px;
-  transition: all ease-in-out .3s;
-}
-
-.userIcon {
-  font-size: 16px;
-  border: solid 1px white;
-  border-radius: 50%;
-  padding: 1px;
-}
-
-.userName {
-  margin: 0 4px;
-}
-
-.loginButtonContainer {
-  margin-left: auto;
-  
-  span {
+  .innerContainer {
+    width: 100%;
+    padding: 0 4px;
+    height: 75%;
+    max-width: 800px;
     display: flex;
-    width: 60px;
     align-items: center;
-    justify-content: space-between;
+  }
+
+  .downLine {
+    width: 100%;
+    height: 25%;
+    background-color: $primary-color-dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .userInfo {
+      display: flex;
+      width: 100%;
+      align-items: flex-end;
+      padding: 4px;
+      transition: all ease-in-out .3s;
+    }
+    
+    .userIcon {
+      font-size: 16px;
+      border: solid 1px white;
+      border-radius: 50%;
+      padding: 1px;
+    }
+    
+    .userName {
+      margin: 0 4px;
+    }
+    
+    .logoutButtonContainer {
+      margin-left: auto;
+      
+      span {
+        display: flex;
+        width: 60px;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
   }
 }
+
