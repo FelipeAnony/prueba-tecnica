@@ -5,11 +5,10 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import LoginForm from '.';
-
+import { LoginForm } from '@/presentation/components';
 import { mockUseLoginForm } from '@/presentation/mocks';
 
-jest.mock('./useLoginForm');
+jest.mock('@/presentation/hooks/useLoginForm');
 jest.mock('react-i18next', () => ({
   useTranslation: () => {
     return {

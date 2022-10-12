@@ -1,4 +1,4 @@
-import { useHeader } from '../components/Header/useHeader';
+import { useHeader } from '@/presentation/hooks';
 
 const mockedUseHeader = useHeader as jest.MockedFn<typeof useHeader>;
 

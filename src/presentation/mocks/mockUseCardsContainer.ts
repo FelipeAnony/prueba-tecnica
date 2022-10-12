@@ -1,5 +1,5 @@
 import { PostModel } from '@/domain/models';
-import { useCardsContainer } from '../components/CardsContainer/useCardsContainer';
+import { useCardsContainer } from '../hooks/useCardsContainer';
 
 const mockedUseCardsContainer = useCardsContainer as jest.MockedFn<
   typeof useCardsContainer

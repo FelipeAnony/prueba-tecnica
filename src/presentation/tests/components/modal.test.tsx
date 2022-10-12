@@ -5,7 +5,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import Modal from '.';
+import { Modal } from '@/presentation/components';
 
 const closeFn = jest.fn(() => {});
 

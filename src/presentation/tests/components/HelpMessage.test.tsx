@@ -4,16 +4,16 @@
 
 import { render, screen } from '@testing-library/react';
 
-import ErrorMessage from '.';
+import { HelpMessage } from '@/presentation/components';
 
 const renderSut = () => {
-  render(<ErrorMessage error="any-error" />);
+  render(<HelpMessage message="any-help-message" />);
 };
 
-describe('ErrorMessage component', () => {
+describe('HelpMessage component', () => {
   beforeEach(() => renderSut());
 
   it('Should render appropiately without any error', () => {
-    expect(screen.getByText('any-error')).toBeInTheDocument();
+    expect(screen.getByTitle('any-help-message')).toBeInTheDocument();
   });
 });

@@ -1,2 +1,2 @@
-export * from './validator/localValidator';
-export * from './httpClient/httpFetchClientAdapter';
+export * from './localValidator';
+export * from './httpFetchClientAdapter';

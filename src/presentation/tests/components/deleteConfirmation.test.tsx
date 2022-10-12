@@ -5,7 +5,7 @@
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import DeleteConfirmation from '.';
+import { DeleteConfirmation } from '@/presentation/components';
 
 jest.mock('react-i18next', () => ({
   useTranslation: () => {

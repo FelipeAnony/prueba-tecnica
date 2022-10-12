@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 
-import { LocalAuthentication } from './localAuthentication';
+import { LocalAuthentication } from '@/data/usecases';
 import { ValidatorStub } from '@/data/mocks';
 import { InvalidEmailError, InvalidPasswordError } from '@/data/errors';
 

@@ -5,7 +5,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import Button from '.';
+import { Button } from '@/presentation/components';
 
 const onClick = jest.fn(() => {});
 

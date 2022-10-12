@@ -2,14 +2,14 @@
  * @jest-environment jsdom
  */
 
-import { mockUseAddPostForm } from '@/presentation/mocks';
 import { render, screen } from '@testing-library/react';
 
 import userEvent from '@testing-library/user-event';
 
-import AddPostForm from '.';
+import { mockUseAddPostForm } from '@/presentation/mocks';
+import { AddPostForm } from '@/presentation/components';
 
-jest.mock('./useAddPostForm');
+jest.mock('@/presentation/hooks/useAddPostForm');
 jest.mock('react-i18next', () => ({
   useTranslation: () => {
     return {

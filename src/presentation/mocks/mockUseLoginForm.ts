@@ -1,4 +1,4 @@
-import { useLoginForm } from '../components/LoginForm/useLoginForm';
+import { useLoginForm } from '@/presentation/hooks';
 
 const mockedUseLoginForm = useLoginForm as jest.MockedFn<typeof useLoginForm>;
 

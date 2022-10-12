@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { PostCard, LogoSpinner, ErrorMessage } from '../';
-import { useCardsContainer } from './useCardsContainer';
+import { useCardsContainer } from '@/presentation/hooks';
 
 import Styles from './styles.scss';
 

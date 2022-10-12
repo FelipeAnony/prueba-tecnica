@@ -1,4 +1,4 @@
-import { usePostCard } from '../components/PostCard/usePostCard';
+import { usePostCard } from '../hooks';
 
 const mockedUsePostCard = usePostCard as jest.MockedFn<typeof usePostCard>;
 

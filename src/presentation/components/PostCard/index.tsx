@@ -10,7 +10,7 @@ import {
 import { PostModel } from '@/domain/models';
 import { usePostsDataContext } from '@/store/hooks';
 import { Modal, EditPostForm, DeleteConfirmation } from '../';
-import { usePostCard } from './usePostCard';
+import { usePostCard } from '@/presentation/hooks';
 
 import Styles from './styles.scss';
 

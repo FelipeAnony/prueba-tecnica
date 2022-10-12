@@ -4,12 +4,11 @@
 
 import { screen, render } from '@testing-library/react';
 
-import CardsContainer from '.';
-
 import { postMock } from '@/data/mocks';
+import { CardsContainer } from '@/presentation/components';
 import { mockUseCardsContainer } from '@/presentation/mocks';
 
-jest.mock('./useCardsContainer');
+jest.mock('@/presentation/hooks/useCardsContainer');
 jest.mock('react-i18next', () => ({
   useTranslation: () => {
     return {

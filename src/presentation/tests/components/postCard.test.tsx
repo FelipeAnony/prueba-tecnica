@@ -2,13 +2,13 @@
  * @jest-environment jsdom
  */
 
-import { mockUsePostCard } from '@/presentation/mocks';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import PostCard from '.';
+import { mockUsePostCard } from '@/presentation/mocks';
+import { PostCard } from '@/presentation/components';
 
-jest.mock('./usePostCard');
+jest.mock('@/presentation/hooks/usePostCard');
 jest.mock('react-i18next', () => ({
   useTranslation: () => {
     return {

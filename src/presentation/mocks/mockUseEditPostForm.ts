@@ -1,4 +1,4 @@
-import { useEditPostForm } from '../components/EditPostForm/useEditPostForm';
+import { useEditPostForm } from '@/presentation/hooks';
 
 const mockedUseEditPostForm = useEditPostForm as jest.MockedFn<
   typeof useEditPostForm

@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 
 import { makeHttpGetClientStub, postMock } from '@/data/mocks';
-import { RemotePosts } from './remotePosts';
+import { RemotePosts } from '@/data/usecases';
 
 const makeSut = () => {
   const url = faker.internet.url();

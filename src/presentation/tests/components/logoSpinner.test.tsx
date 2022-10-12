@@ -3,7 +3,7 @@
  */
 
 import { render, screen } from '@testing-library/react';
-import LogoSpinner from '.';
+import { LogoSpinner } from '@/presentation/components';
 
 jest.mock('react-i18next', () => ({
   useTranslation: () => {

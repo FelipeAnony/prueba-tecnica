@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 
 import { fetchMock, fetchMockSuccessReturn } from '@/infra/mocks';
-import { HttpFetchClientAdapter } from './httpFetchClientAdapter';
+import { HttpFetchClientAdapter } from '@/infra/adapters';
 
 global.fetch = fetchMock;
 

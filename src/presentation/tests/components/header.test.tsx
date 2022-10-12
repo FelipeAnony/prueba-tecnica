@@ -6,10 +6,9 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { mockUseHeader } from '@/presentation/mocks';
+import { Header } from '@/presentation/components';
 
-import Header from '.';
-
-jest.mock('./useHeader');
+jest.mock('@/presentation/hooks/useHeader');
 jest.mock('react-i18next', () => ({
   useTranslation: () => {
     return {

@@ -3,7 +3,7 @@ import { FiLogOut } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
 import { Button, ChangeLanguageBtn, Logo } from '../';
-import { useHeader } from './useHeader';
+import { useHeader } from '@/presentation/hooks';
 
 import Styles from './styles.scss';
 

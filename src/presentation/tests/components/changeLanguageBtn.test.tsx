@@ -3,10 +3,9 @@
  */
 
 import { render, screen } from '@testing-library/react';
-
 import userEvent from '@testing-library/user-event';
 
-import ChangeLanguageBtn from '.';
+import { ChangeLanguageBtn } from '@/presentation/components/';
 
 const mockChangeLanguagefn = jest.fn(
   (language: string) => new Promise(() => {})

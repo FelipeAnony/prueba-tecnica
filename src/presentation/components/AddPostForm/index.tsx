@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Input, Textarea, Button } from '../';
 import { useGlobalDataContext } from '@/store/hooks';
-import { useAddPostForm } from './useAddPostForm';
+import { useAddPostForm } from '@/presentation/hooks';
 
 import Styles from './styles.scss';
 

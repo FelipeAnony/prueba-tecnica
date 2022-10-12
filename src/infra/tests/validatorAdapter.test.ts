@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 
-import { LocalValidator } from './localValidator';
+import { LocalValidator } from '@/infra/adapters';
 
 const makeSut = () => new LocalValidator();
 

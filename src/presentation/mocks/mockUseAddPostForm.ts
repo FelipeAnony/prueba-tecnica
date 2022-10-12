@@ -1,5 +1,5 @@
 import { PostModel } from '@/domain/models';
-import { useAddPostForm } from '../components/AddPostForm/useAddPostForm';
+import { useAddPostForm } from '@/presentation/hooks';
 
 const mockedUseAddPostForm = useAddPostForm as jest.MockedFn<
   typeof useAddPostForm

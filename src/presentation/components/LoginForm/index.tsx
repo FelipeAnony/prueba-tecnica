@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { Input, ErrorMessage, Button } from '../';
-import { useLoginForm } from './useLoginForm';
+import { useLoginForm } from '@/presentation/hooks';
 
 import Styles from './styles.scss';
 

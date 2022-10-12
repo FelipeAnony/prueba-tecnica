@@ -4,7 +4,7 @@
 
 import { render, screen } from '@testing-library/react';
 
-import PrivateRoute from '.';
+import { PrivateRoute } from '@/presentation/components';
 
 const renderSut = (auth = true) =>
   render(
