@@ -9,6 +9,9 @@
     "edit post": "Editar publicación",
     "loading": "Cargando",
     "cancel": "Cancelar",
-    "save changes": "Guardar Cambios"
+    "save changes": "Guardar Cambios",
+    "are you sure you want to delete": "¿Estas seguro que quieres elimarlo?",
+    "no, cancel": "No, cancelar",
+    "yes, delete": "Si, eliminar"
   }
 }

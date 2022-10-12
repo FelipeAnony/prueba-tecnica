@@ -9,6 +9,9 @@
     "edit post": "Edit Post",
     "loading": "Loading",
     "cancel": "Cancel",
-    "save changes": "Save Changes"
+    "save changes": "Save Changes",
+    "are you sure you want to delete": "Are you sure you want to delete",
+    "no, cancel": "No, cancel",
+    "yes, delete": "Yes, delete"
   }
 }
