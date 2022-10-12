@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { FaUserAlt } from 'react-icons/fa';
 import {
   AiOutlineHeart,
@@ -5,14 +6,11 @@ import {
   AiOutlineEdit,
   AiOutlineDelete,
 } from 'react-icons/ai';
-import { useTranslation } from 'react-i18next';
 
 import { PostModel } from '@/domain/models';
-
+import { usePostsDataContext } from '@/store/hooks';
 import { Modal, EditPostForm, DeleteConfirmation } from '../';
 import { usePostCard } from './usePostCard';
-
-import { usePostsDataContext } from '@/store/hooks';
 
 import Styles from './styles.scss';
 

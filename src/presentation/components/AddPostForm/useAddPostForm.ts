@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export const useAddPostForm = () => {
   const [formData, setFormData] = useState({ title: '', body: '' });
@@ -7,19 +7,16 @@ export const useAddPostForm = () => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    const { name, value } = e.target;
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
-  const handleOpenClick = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const clearForm = () => {
-    setFormData({ body: '', title: '' });
-  };
+  const handleOpenClick = () => setIsOpen(!isOpen);
+  const clearForm = () => setFormData({ body: '', title: '' });
 
   return { formData, isOpen, handleChange, handleOpenClick, clearForm };
 };

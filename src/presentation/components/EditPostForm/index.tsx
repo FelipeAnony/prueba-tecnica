@@ -1,11 +1,10 @@
 import { useTranslation } from 'react-i18next';
 
 import { PostModel } from '@/domain/models';
-
 import { Input, Button, Textarea } from '../';
+import { useEditPostForm } from './useEditPostForm';
 
 import Styles from './styles.scss';
-import { useEditPostForm } from './useEditPostForm';
 
 type Props = {
   title: string;

@@ -1,4 +1,4 @@
-import HelpMessage from '../HelpMessage';
+import { HelpMessage } from '../';
 
 import Styles from './styles.scss';
 
@@ -33,6 +33,7 @@ const Input: React.FC<Props> = ({
         <label htmlFor={id}>{label}</label>
         {helpMessage && <HelpMessage message={helpMessage} />}
       </div>
+
       <input
         {...{
           id,

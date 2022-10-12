@@ -13,7 +13,7 @@ const CardsContainer: React.FC = () => {
     <main className={Styles.cardsContainer}>
       {error && (
         <div className={Styles.errorContainer}>
-          <ErrorMessage error={'Error:' + t('cannot get posts')} />
+          <ErrorMessage error={'Error: ' + t('cannot get posts')} />
         </div>
       )}
 

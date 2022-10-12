@@ -1,10 +1,10 @@
-import { Footer, LoginForm, LoginHeader } from '@/presentation/components';
+import { Footer, Header, LoginForm } from '@/presentation/components';
 import Styles from './styles.scss';
 
 const LoginPage: React.FC = () => {
   return (
     <div className={Styles.loginContainer}>
-      <LoginHeader />
+      <Header />
       <LoginForm />
       <Footer />
     </div>

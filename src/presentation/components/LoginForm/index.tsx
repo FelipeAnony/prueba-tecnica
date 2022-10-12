@@ -1,10 +1,9 @@
 import { useTranslation } from 'react-i18next';
 
 import { Input, ErrorMessage, Button } from '../';
+import { useLoginForm } from './useLoginForm';
 
 import Styles from './styles.scss';
-
-import { useLoginForm } from './useLoginForm';
 
 const LoginForm: React.FC = () => {
   const { loginData, error, buttonIsDisabled, handleChange, handleSubmit } =
@@ -35,7 +34,7 @@ const LoginForm: React.FC = () => {
           onChange={handleChange}
           type="password"
           value={loginData.password}
-          placeholder="Your password"
+          placeholder={t('your password')}
           helpMessage={t('helpPasswordmessage')}
           required
         />

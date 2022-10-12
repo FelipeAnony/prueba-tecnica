@@ -1,7 +1,7 @@
 export { default as AddPostForm } from './AddPostForm';
 export { default as Button } from './Button';
 export { default as CardsContainer } from './CardsContainer';
-export { default as ChangeLanguagesBtn } from './ChangeLanguageBtn';
+export { default as ChangeLanguageBtn } from './ChangeLanguageBtn';
 export { default as DeleteConfirmation } from './DeleteConfirmation';
 export { default as EditPostForm } from './EditPostForm';
 export { default as ErrorMessage } from './ErrorMessage';
@@ -10,7 +10,7 @@ export { default as Header } from './Header';
 export { default as HelpMessage } from './HelpMessage';
 export { default as Input } from './Input';
 export { default as LoginForm } from './LoginForm';
-export { default as LoginHeader } from './LoginHeader';
+export { default as Logo } from './Logo';
 export { default as LogoSpinner } from './LogoSpinner';
 export { default as Modal } from './Modal';
 export { default as PostCard } from './PostCard';

@@ -12,7 +12,7 @@ const ChangeLanguageBtn: React.FC = () => {
       <Button onClick={() => i18n.changeLanguage('en')} style="clear">
         <>
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_the_United_Kingdom.png/320px-Flag_of_the_United_Kingdom.png"
+            src="https://firebasestorage.googleapis.com/v0/b/socialcards-5d7fb.appspot.com/o/320px-Flag_of_the_United_Kingdom.png?alt=media&token=84de0866-ac9b-468e-ba89-afea3850b8e1"
             alt="spain"
           />
           EN
@@ -22,7 +22,7 @@ const ChangeLanguageBtn: React.FC = () => {
       <Button onClick={() => i18n.changeLanguage('es')} style="clear">
         <>
           <img
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/320px-Flag_of_Spain.svg.png"
+            src="https://firebasestorage.googleapis.com/v0/b/socialcards-5d7fb.appspot.com/o/spain.png?alt=media&token=2e4ba478-1a70-4109-8920-95285d10fd9b"
             alt="spain"
           />
           ES

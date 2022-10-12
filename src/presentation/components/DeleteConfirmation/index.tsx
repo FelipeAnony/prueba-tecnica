@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next';
+
 import Button from '../Button';
+
 import Styles from './styles.scss';
 
 type Props = {
@@ -20,7 +22,9 @@ const DeleteConfirmation: React.FC<Props> = ({
       <span className={Styles.question}>
         {t('are you sure you want to delete')}:
       </span>
+
       <span className={Styles.name}>{name} ?</span>
+
       <div className={Styles.buttonsContainer}>
         <Button onClick={cancelDeleteFn}>{t('no, cancel')}</Button>
         <Button onClick={deleteFn} style="clear">

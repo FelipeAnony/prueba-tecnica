@@ -1,0 +1,17 @@
+.innerContainer {
+  width: 100%;
+  padding: 0 10px;
+  height: 75%;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  color: white;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 18px;
+  padding: 2px;
+  border: solid 2px white;
+  border-radius: 1px 6px; 
+}
