@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
   const { user } = useGlobalDataContext();
 
   return (
-    <PrivateRoute auth={user?.user} redirectOnFailTo="/login">
+    <PrivateRoute auth={true} redirectOnFailTo="/login">
       <>
         <Header />
         <PostsDataContextProvider>

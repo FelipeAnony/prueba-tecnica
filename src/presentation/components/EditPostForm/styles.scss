@@ -7,22 +7,22 @@
   width: 100%;
   height: max-content;
   padding: 10px;
+}
+  
+.title {
+  margin: 10px 0;
+}
 
-  .title {
-    margin: 10px 0;
-  }
-
-  .form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    .buttonsContainer{
-      display: grid;
-      grid-template-columns: 45% 45%;
-      column-gap: 10%;
-      width: 100%;
-      margin-top: 20px;
-    }
-  }
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+  
+.buttonsContainer{
+  display: grid;
+  grid-template-columns: 45% 45%;
+  column-gap: 10%;
+  width: 100%;
+  margin-top: 20px;
 }

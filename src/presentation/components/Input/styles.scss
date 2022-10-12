@@ -10,11 +10,6 @@
   padding: 4px;
   margin-top: 20px;
 
-  .helpMessage {
-    display: flex;
-    justify-content: space-between;
-  }
-
   input {
     background-color: transparent;
     outline: none;
@@ -23,3 +18,7 @@
   }
 }
 
+.helpMessage {
+  display: flex;
+  justify-content: space-between;
+}
