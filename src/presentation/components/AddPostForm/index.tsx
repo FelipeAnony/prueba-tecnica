@@ -2,7 +2,7 @@ import { AiOutlineDown } from 'react-icons/ai';
 import { useTranslation } from 'react-i18next';
 
 import { Input, Textarea, Button } from '../';
-import { useGlobalDataContext, usePostsDataContext } from '@/store/hooks';
+import { useGlobalDataContext } from '@/store/hooks';
 import { useAddPostForm } from './useAddPostForm';
 
 import Styles from './styles.scss';
@@ -36,6 +36,7 @@ const AddPostForm: React.FC = () => {
       <div className={Styles.titleContainer}>
         <h2 className={Styles.title}>{t('add new post')}</h2>
         <AiOutlineDown
+          data-testid="openButton"
           className={`${Styles.arrowIcon} ${!isOpen && Styles.arrowUp}`}
           onClick={handleOpenClick}
         />
