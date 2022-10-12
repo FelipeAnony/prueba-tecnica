@@ -11,6 +11,16 @@ import EditPostForm from '.';
 import { mockUseEditPostForm } from '@/presentation/mocks';
 
 jest.mock('./useEditPostForm');
+jest.mock('react-i18next', () => ({
+  useTranslation: () => {
+    return {
+      t: (str: string) => str,
+      i18n: {
+        changeLanguage: () => new Promise(() => {}),
+      },
+    };
+  },
+}));
 
 const editFn = jest.fn((id: number, newData: PostModel) => {});
 const closeFn = jest.fn(() => {});

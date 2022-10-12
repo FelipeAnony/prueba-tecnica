@@ -9,6 +9,16 @@ import userEvent from '@testing-library/user-event';
 import PostCard from '.';
 
 jest.mock('./usePostCard');
+jest.mock('react-i18next', () => ({
+  useTranslation: () => {
+    return {
+      t: (str: string) => str,
+      i18n: {
+        changeLanguage: () => new Promise(() => {}),
+      },
+    };
+  },
+}));
 
 const props = {
   body: 'any-body',

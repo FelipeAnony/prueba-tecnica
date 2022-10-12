@@ -7,6 +7,17 @@ import userEvent from '@testing-library/user-event';
 
 import DeleteConfirmation from '.';
 
+jest.mock('react-i18next', () => ({
+  useTranslation: () => {
+    return {
+      t: (str: string) => str,
+      i18n: {
+        changeLanguage: () => new Promise(() => {}),
+      },
+    };
+  },
+}));
+
 const deleteFn = jest.fn(() => {});
 const cancelDeleteFn = jest.fn(() => {});
 
