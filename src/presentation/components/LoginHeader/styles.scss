@@ -26,6 +26,8 @@
   }
   
   .downLine {
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 25%;
     background-color: $primary-color-dark;

@@ -3,13 +3,14 @@ import { FiLogOut } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
 import Button from '../Button';
+import { useHeader } from './useHeader';
 
 import Styles from './styles.scss';
-import { useHeader } from './useHeader';
+import ChangeLanguageBtn from '../ChangeLanguageBtn';
 
 const Header: React.FC = () => {
   const { user, handleLogout } = useHeader();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <header className={Styles.header}>
@@ -17,12 +18,14 @@ const Header: React.FC = () => {
         <span className={Styles.logo}>SocialCards</span>
       </div>
 
-      <section className={Styles.downLine}>
+      <div className={Styles.downLine}>
         <div className={Styles.innerContainer}>
           <div className={Styles.userInfo}>
             <AiOutlineUser className={Styles.userIcon} />
 
             <span className={Styles.userName}>{user?.user}</span>
+
+            <ChangeLanguageBtn />
 
             <div className={Styles.logoutButtonContainer}>
               <Button onClick={handleLogout} style="clear">
@@ -34,7 +37,7 @@ const Header: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </header>
   );
 };

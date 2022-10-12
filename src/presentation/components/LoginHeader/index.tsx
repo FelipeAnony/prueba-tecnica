@@ -1,3 +1,4 @@
+import ChangeLanguageBtn from '../ChangeLanguageBtn';
 import Styles from './styles.scss';
 
 const LoginHeader: React.FC = () => {
@@ -6,7 +7,9 @@ const LoginHeader: React.FC = () => {
       <section className={Styles.innerContainer}>
         <span className={Styles.logo}>SocialCards</span>
       </section>
-      <div className={Styles.downLine}></div>
+      <div className={Styles.downLine}>
+        <ChangeLanguageBtn />
+      </div>
     </header>
   );
 };
