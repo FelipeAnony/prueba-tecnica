@@ -33,8 +33,9 @@
 
 .userInfo {
   display: flex;
+  overflow: hidden;
   width: 100%;
-  align-items: flex-end;
+  align-items: center;
   padding: 4px;
   transition: all ease-in-out .3s;
 }
@@ -48,6 +49,10 @@
       
 .userName {
   margin: 0 4px;
+  font-size: 10px;
+  max-width: 20%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
       
 .logoutButtonContainer {
@@ -60,6 +65,30 @@
     width: max-content;
     align-items: center;
     justify-content: space-between;
+    font-size: 10px;
   }
 }
 
+@media (min-width: 300px) {
+  .userName {
+    max-width: 30%;
+  }
+}
+
+@media (min-width: 400px) {
+  .userName {
+    max-width: 35%;
+  }
+}
+
+@media (min-width: 600px) {
+  .userName {
+    font-size: 12px;
+  }
+
+  .logoutButtonContainer { 
+    span {
+      font-size: 12px;
+    }
+  }
+}
