@@ -6,9 +6,9 @@ Instalar las dependencias del proyecto:
 
 Ejecutar el servidor de desarrollo:
 
-<pre>npm start</pre>
+<pre>npm run dev</pre>
 
-O puedes aceder a la version de producción en: 'link'
+O puedes aceder a la version de producción en: https://socialcards-5d7fb.web.app/
 
 **ps: En la pagina de Login, basta poner cualquier email valido y cualquier contraseña que tenga al menos 6 caracteres, con al menos
 1 letra mayuscula, 1 minuscula y 1 numero para autenticarse.**
@@ -22,6 +22,16 @@ ejemplo:
 
 <hr />
 
+> ## Scripts disponibles
+
+- npm run test
+- npm run test:watch
+- npm run test:ci
+- npm run dev
+- npm run build
+
+<br/>
+
 > ## Princípios utilizados
 
 - Single Responsibility Principle (SRP)
@@ -33,11 +43,15 @@ ejemplo:
 - Keep It Simple, Silly (KISS)
 - Small Commits
 
+<br/>
+
 > ## Design Patterns
 
 - Factory
 - Adapter
 - Dependency Injection
+
+<br/>
 
 > ## Metodologias y Designs
 
@@ -50,6 +64,8 @@ ejemplo:
 - Modular Design
 - Dependency Diagrams
 - Use Cases
+
+<br/>
 
 > ## Librerías y herramientas
 
@@ -70,6 +86,8 @@ ejemplo:
 - Husky
 - i18n
 
+<br/>
+
 > ## Features de React
 
 - Functional Components
@@ -78,6 +96,8 @@ ejemplo:
 - UseEffect
 - UseRef
 - Custom Hooks
+
+<br/>
 
 > ## Features de Typescript
 
@@ -88,6 +108,8 @@ ejemplo:
 - Build
 - Deploy
 - Generics
+
+<br/>
 
 > ## Features de Tests
 
