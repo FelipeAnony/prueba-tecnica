@@ -8,6 +8,8 @@
 
 -En una aplicación tan pequeña, quizás no quede tan claro todos los beneficios de utilizar Clean Architecture y hasta podría parecer que sería mejor hacerlo sin una buena arquitectura, pero lo que pasa, es que la única manera de implementar una buena arquitectura y crear un buen código es haciéndolo todo bien desde el principio. Probablemente tardaría la mitad del tiempo o hasta menos si simplemente me enfocara en hacer algo que funcione sin preocuparme con calidad, pero si así lo hiciera y más tarde tuviera que hacer mantenimiento del código o adicionar features nuevas, la tendencia es que cada vez más quede más costoso y tome más tiempo en hacerlo. Por otro lado, con Clean Architecture, TDD y respeto a las buenas prácticas, en el inicio tardas más tiempo en hacer las cosas, porque tienes mucho más que hacer que alguien que no utiliza estas técnicas, pero a medida que tu aplicación crece, se queda cada vez más confiable, robusta y cada vez más necesitas de menos tiempo y esfuerzo para hacer mantenimiento o adicionar nuevas features.
 
+-En relacion a React, al separar la parte 'visual' del componente de su lógica (los hooks), nos permite hacer tests unitarios que serian imposibles de hacer de otra manera. De esta forma, tenemos una cobertura de tests mucho mayor de lo que seria posible hacer con la logica y el jsx en el mismo archivo. Implentadolo bien, deveriamos tener todas las partes del sistema cobierta por tests, desde el core hasta el presentation.
+
 **Significado de los nombres utilizados en archivos:**
 
 - remote\*\*.ts: Cualquier usecase de data layer que tiene que hacer peticiones a servicios externos.
