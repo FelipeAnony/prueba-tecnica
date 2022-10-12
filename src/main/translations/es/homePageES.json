@@ -10,8 +10,11 @@
     "loading": "Cargando",
     "cancel": "Cancelar",
     "save changes": "Guardar Cambios",
-    "are you sure you want to delete": "¿Estas seguro que quieres elimarlo?",
+    "are you sure you want to delete": "¿Estas seguro que quieres eliminar",
     "no, cancel": "No, cancelar",
-    "yes, delete": "Si, eliminar"
+    "yes, delete": "Si, eliminar",
+    "login": "Iniciar Sesión",
+    "password": "Contraseña",
+    "helpPasswordmessage": "Tu contraseña debe tener entre 6 - 12 caracteres, con al menos una letra mayuscula, una minuscula y un numero."
   }
 }

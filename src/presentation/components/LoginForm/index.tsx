@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { Input, ErrorMessage, Button } from '../';
 
 import Styles from './styles.scss';
@@ -8,9 +10,11 @@ const LoginForm: React.FC = () => {
   const { loginData, error, buttonIsDisabled, handleChange, handleSubmit } =
     useLoginForm();
 
+  const { t } = useTranslation();
+
   return (
     <section className={Styles.loginFormContainer}>
-      <h1>Login</h1>
+      <h1>{t('login')}</h1>
       <form onSubmit={(e) => e.preventDefault()} className={Styles.loginForm}>
         <Input
           label="Email"
@@ -25,14 +29,14 @@ const LoginForm: React.FC = () => {
         />
 
         <Input
-          label="Password"
+          label={t('password')}
           id="password"
           name="password"
           onChange={handleChange}
           type="password"
           value={loginData.password}
           placeholder="Your password"
-          helpMessage="Tu contraseña debe tener entre 6 - 12 caracteres, con al menos una letra mayuscula, una minuscula y un numero."
+          helpMessage={t('helpPasswordmessage')}
           required
         />
 
@@ -44,7 +48,7 @@ const LoginForm: React.FC = () => {
             disabled={buttonIsDisabled}
             onClick={handleSubmit}
           >
-            Login
+            {t('login')}
           </Button>
         </div>
       </form>

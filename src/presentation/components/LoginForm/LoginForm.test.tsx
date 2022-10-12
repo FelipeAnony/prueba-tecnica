@@ -18,10 +18,10 @@ describe('Login Form component', () => {
     mockUseLoginForm({});
     renderSut();
 
-    expect(screen.getByRole('heading', { name: 'Login' })).toBeInTheDocument();
-    expect(screen.getByRole('textbox', { name: 'Email' })).toBeInTheDocument();
-    expect(screen.getByLabelText('Password')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Login' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /login/i })).toBeInTheDocument();
+    expect(screen.getByRole('textbox', { name: /email/i })).toBeInTheDocument();
+    expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /login/i })).toBeInTheDocument();
   });
 
   it('Should calls handleChange method when user types', async () => {
