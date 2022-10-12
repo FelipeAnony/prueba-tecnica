@@ -17,6 +17,8 @@
     "password": "Password",
     "helpPasswordmessage": "Your password must be between 6 - 12 characters, with at least one uppercase letter, one lowercase and one number.",
     "cannot get posts": "Cannot get posts. Try it again later.",
-    "your password": "Your password"
+    "your password": "Your password",
+    "Invalid Email": "Invalid Email.",
+    "Invalid Password": "Invalid Password."
   }
 }

@@ -17,6 +17,8 @@
     "password": "Contraseña",
     "helpPasswordmessage": "Tu contraseña debe tener entre 6 - 12 caracteres, con al menos una letra mayuscula, una minuscula y un numero.",
     "cannot get posts": "No fue posible cargar los datos. Intentalo de nuevo mas tarde.",
-    "your password": "Tu contraseña"
+    "your password": "Tu contraseña",
+    "Invalid Email": "Email Invalido.",
+    "Invalid Password": "Contraseña invalida."
   }
 }

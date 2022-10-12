@@ -39,7 +39,7 @@ const LoginForm: React.FC = () => {
           required
         />
 
-        {error && <ErrorMessage error={error.message} />}
+        {error && <ErrorMessage error={t(error.message)} />}
 
         <div className={Styles.buttonContainer}>
           <Button
