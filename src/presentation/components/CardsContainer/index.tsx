@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { PostCard, LogoSpinner, ErrorMessage } from '../';
 import { useCardsContainer } from './useCardsContainer';
 
@@ -5,12 +7,13 @@ import Styles from './styles.scss';
 
 const CardsContainer: React.FC = () => {
   const { postsToRender, error } = useCardsContainer();
+  const { t } = useTranslation();
 
   return (
     <main className={Styles.cardsContainer}>
       {error && (
         <div className={Styles.errorContainer}>
-          <ErrorMessage error="Error: cannot get posts" />
+          <ErrorMessage error={'Error:' + t('cannot get posts')} />
         </div>
       )}
 

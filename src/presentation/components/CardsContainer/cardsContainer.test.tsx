@@ -32,7 +32,7 @@ describe('CardsContainer component', () => {
     mockUseCardsContainer(new Error(), []);
     renderSut();
 
-    expect(screen.getByText('Error: cannot get posts')).toBeInTheDocument();
+    expect(screen.getByText(/Error: cannot get posts/i)).toBeInTheDocument();
   });
 
   it('Should render spinner loading when postsToRender is empty', () => {
