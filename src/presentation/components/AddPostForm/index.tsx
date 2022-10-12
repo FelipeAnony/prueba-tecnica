@@ -1,4 +1,5 @@
 import { AiOutlineDown } from 'react-icons/ai';
+import { useTranslation } from 'react-i18next';
 
 import { useGlobalDataContext, usePostsDataContext } from '@/store/hooks';
 import { Input, Textarea, Button } from '../';
@@ -12,6 +13,7 @@ const AddPostForm: React.FC = () => {
 
   const { user } = useGlobalDataContext();
   const { addPost, postsList } = usePostsDataContext();
+  const { t } = useTranslation();
 
   const newPostObject = {
     title: formData.title,
@@ -27,7 +29,7 @@ const AddPostForm: React.FC = () => {
       }`}
     >
       <div className={Styles.titleContainer}>
-        <h2 className={Styles.title}>Add new post</h2>
+        <h2 className={Styles.title}>{t('add new post')}</h2>
         <AiOutlineDown
           className={`${Styles.arrowIcon} ${!isOpen && Styles.arrowUp}`}
           onClick={handleOpenClick}
@@ -37,7 +39,7 @@ const AddPostForm: React.FC = () => {
         <Input
           id="addPostTitle"
           name="title"
-          label="Title"
+          label={t('title')}
           onChange={handleChange}
           value={formData.title}
           type="text"
@@ -48,6 +50,7 @@ const AddPostForm: React.FC = () => {
           name="body"
           onChange={handleChange}
           value={formData.body}
+          label={t('message')}
         />
 
         <div className={Styles.buttonContainer}>
@@ -58,7 +61,7 @@ const AddPostForm: React.FC = () => {
             }}
             disabled={formData.title.length === 0 || formData.body.length === 0}
           >
-            Add Post
+            {t('add post')}
           </Button>
         </div>
       </form>

@@ -1,6 +1,10 @@
 {
   "translation": {
     "logout": "Logout",
-    "user": "user:"
+    "user": "user:",
+    "add new post": "Add new post",
+    "title": "Title",
+    "message": "Message",
+    "add post": "Add Post"
   }
 }

@@ -1,6 +1,10 @@
 {
   "translation": {
     "logout": "Cerrar sesión",
-    "user": "usuário:"
+    "user": "usuário:",
+    "add new post": "Adicionar Nueva publicación",
+    "title": "Título",
+    "message": "Mensaje",
+    "add post": "Crear Post"
   }
 }
