@@ -5,16 +5,16 @@ import {
   AiOutlineEdit,
   AiOutlineDelete,
 } from 'react-icons/ai';
+import { useTranslation } from 'react-i18next';
 
 import { PostModel } from '@/domain/models';
 
-import Modal from '../Modal';
+import { Modal, EditPostForm, DeleteConfirmation } from '../';
 import { usePostCard } from './usePostCard';
 
-import Styles from './styles.scss';
-import DeleteConfirmation from '../DeleteConfirmation';
 import { usePostsDataContext } from '@/store/hooks';
-import EditPostForm from '../EditPostForm';
+
+import Styles from './styles.scss';
 
 const PostCard: React.FC<PostModel> = ({ body, id, title, userId }) => {
   const {
@@ -28,6 +28,7 @@ const PostCard: React.FC<PostModel> = ({ body, id, title, userId }) => {
   } = usePostCard();
 
   const { removePost, editPost } = usePostsDataContext();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -38,7 +39,9 @@ const PostCard: React.FC<PostModel> = ({ body, id, title, userId }) => {
 
         <div className={Styles.titleContainer}>
           <h2 className={Styles.title}>{title}</h2>
-          <span className={Styles.userId}>user: {userId}</span>
+          <span className={Styles.userId}>
+            {t('user')} {userId}
+          </span>
         </div>
 
         <div className={Styles.downContainer}>
