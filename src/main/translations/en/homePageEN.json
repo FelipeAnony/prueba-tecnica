@@ -6,6 +6,9 @@
     "title": "Title",
     "message": "Message",
     "add post": "Add Post",
-    "loading": "Loading"
+    "edit post": "Edit Post",
+    "loading": "Loading",
+    "cancel": "Cancel",
+    "save changes": "Save Changes"
   }
 }

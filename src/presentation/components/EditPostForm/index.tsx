@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { PostModel } from '@/domain/models';
 
 import { Input, Button, Textarea } from '../';
@@ -23,14 +25,15 @@ const EditPostForm: React.FC<Props> = ({
   userId,
 }) => {
   const { formData, handleChange } = useEditPostForm(title, body);
+  const { t } = useTranslation();
 
   return (
     <section className={Styles.editPostFormContainer}>
-      <h2 className={Styles.edit}>Edit Post</h2>
+      <h2 className={Styles.edit}>{t('edit post')}</h2>
       <form className={Styles.form} onSubmit={(e) => e.preventDefault()}>
         <Input
           id="title"
-          label="Title"
+          label={t('title')}
           name="title"
           onChange={handleChange}
           type={'text'}
@@ -42,11 +45,12 @@ const EditPostForm: React.FC<Props> = ({
           name="body"
           onChange={handleChange}
           value={formData.body}
+          label={t('message')}
         />
 
         <div className={Styles.buttonsContainer}>
           <Button style="outline" onClick={closeFn}>
-            Cancel
+            {t('cancel')}
           </Button>
 
           <Button
@@ -60,7 +64,7 @@ const EditPostForm: React.FC<Props> = ({
               closeFn();
             }}
           >
-            Save Changes
+            {t('save changes')}
           </Button>
         </div>
       </form>

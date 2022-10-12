@@ -5,7 +5,10 @@
     "add new post": "Adicionar Nueva publicación",
     "title": "Título",
     "message": "Mensaje",
-    "add post": "Crear Post",
-    "loading": "Cargando"
+    "add post": "Crear publicación",
+    "edit post": "Editar publicación",
+    "loading": "Cargando",
+    "cancel": "Cancelar",
+    "save changes": "Guardar Cambios"
   }
 }
