@@ -6,3 +6,5 @@ coverage
 firebase.json
 
 public/js
+
+dist
