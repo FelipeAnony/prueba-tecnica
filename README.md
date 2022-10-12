@@ -11,11 +11,14 @@ Ejecutar el servidor de desarrollo:
 O puedes aceder a la version de producción en: 'link'
 
 **ps: En la pagina de Login, basta poner cualquier email valido y cualquier contraseña que tenga al menos 6 caracteres, con al menos
-1 letra mayuscula, 1 minuscula y 1 numero.**
+1 letra mayuscula, 1 minuscula y 1 numero para autenticarse.**
 
 ejemplo:
-'example@mail.com'
-'anyPassword1'
+
+<pre>
+  example@mail.com
+  anyPassword1
+</pre>
 
 <hr />
 
