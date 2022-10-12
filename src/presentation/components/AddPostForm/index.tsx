@@ -8,11 +8,16 @@ import { useAddPostForm } from './useAddPostForm';
 import Styles from './styles.scss';
 
 const AddPostForm: React.FC = () => {
-  const { formData, handleChange, isOpen, handleOpenClick, clearForm } =
-    useAddPostForm();
+  const {
+    formData,
+    handleChange,
+    isOpen,
+    handleOpenClick,
+    handleAddPost,
+    postsList,
+  } = useAddPostForm();
 
   const { user } = useGlobalDataContext();
-  const { addPost, postsList } = usePostsDataContext();
   const { t } = useTranslation();
 
   const newPostObject = {
@@ -56,10 +61,7 @@ const AddPostForm: React.FC = () => {
 
         <div className={Styles.buttonContainer}>
           <Button
-            onClick={() => {
-              addPost(newPostObject);
-              clearForm();
-            }}
+            onClick={() => handleAddPost(newPostObject)}
             disabled={!formData.title.length || !formData.body.length}
           >
             {t('add post')}
