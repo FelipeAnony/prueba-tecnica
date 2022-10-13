@@ -11,6 +11,7 @@
     "test:watch": "npm run test -- --watch -o",
     "test:staged": "npm run test -- -o",
     "test:ci": "npm run test -- --coverage",
+    "cypress": "cypress open",
     "prepare": "husky install"
   },
   "keywords": [],
