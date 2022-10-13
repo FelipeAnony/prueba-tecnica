@@ -4,6 +4,7 @@ coverage
 
 .firebaserc
 firebase.json
+.firebase
 
 public/js
 
