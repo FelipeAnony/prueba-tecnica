@@ -1,53 +1,53 @@
-@import '../../styles/colors';
+@use '../../styles/colors';
 
 .button {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-}
 
-.default {
-  @extend .button;
-  padding: 4px 8px;
-  border: solid 1px $primary-color-extraDark;
-  background-color: $primary-color-mid;
-  border-radius: 4px;
-  width: 100%;
-  color: white;
-
-  &:hover {
-    background-color: $primary-color-extraDark;
-    transition: ease-in-out .2s;
+  &--default {
+    @extend .button;
+    padding: .25rem .5rem;
+    border: solid 1px colors.$primary-color-extraDark;
+    background-color: colors.$primary-color-mid;
+    border-radius: .25rem;
+    width: 100%;
+    color: white;
+  
+    &:hover {
+      background-color: colors.$primary-color-extraDark;
+      transition: ease-in-out .2s;
+    }
   }
-}
 
-.outline {
-  @extend .button;
-  padding: 4px 8px;
-  border: solid 1px $primary-color-mid;
-  border-radius: 4px;
-
-  &:hover {
-    border-color: $primary-color-extraDark;
-    transition: ease-in-out .2s;
+  &--outline {
+    @extend .button;
+    padding: .25rem .5rem;
+    border: solid 1px colors.$primary-color-mid;
+    border-radius: .5rem;
+  
+    &:hover {
+      border-color: colors.$primary-color-extraDark;
+      transition: ease-in-out .2s;
+    }
   }
-}
 
-.clear {
-  @extend .button;
-  border: none;
-  background-color: transparent;
-}
+  &--clear {
+    @extend .button;
+    border: none;
+    background-color: transparent;
+  }
 
-.disabled {
-  @extend .button;
-  padding: 4px 8px;
-  border: solid 1px $primary-color-extraDark;
-  background-color: $primary-color-mid;
-  border-radius: 4px;
-  width: 100%;
-  color: white;
-  opacity: .8;
-  cursor: not-allowed;
+  &--disabled {
+    @extend .button;
+    padding: .25rem .5rem;
+    border: solid 1px colors.$primary-color-extraDark;
+    background-color: colors.$primary-color-mid;
+    border-radius: .25rem;
+    width: 100%;
+    color: white;
+    opacity: .8;
+    cursor: not-allowed;
+  }
 }

@@ -12,7 +12,7 @@ import { usePostsDataContext } from '@/store/hooks';
 import { Modal, EditPostForm, DeleteConfirmation } from '../';
 import { usePostCard } from '@/presentation/hooks';
 
-import Styles from './styles.scss';
+import './styles.scss';
 
 const PostCard: React.FC<PostModel> = ({ body, id, title, userId }) => {
   const {
@@ -30,22 +30,21 @@ const PostCard: React.FC<PostModel> = ({ body, id, title, userId }) => {
 
   return (
     <>
-      <section className={Styles.postCard}>
-        <div className={Styles.imgContainer}>
+      <section className={'postCard'}>
+        <div className={'postCard__imgContainer'}>
           <FaUserAlt />
         </div>
 
-        <div className={Styles.titleContainer}>
-          <h2 className={Styles.title}>{title}</h2>
-          <span className={Styles.userId}>
+        <header className={'postCard__header'}>
+          <h2 className={'postCard__title'}>{title}</h2>
+          <span className={'postCard__userId'}>
             {t('user')} {userId}
           </span>
-        </div>
+        </header>
 
-        <div className={Styles.downContainer}>
-          <p className={Styles.body}>{body}</p>
-
-          <div className={Styles.cardOptions}>
+        <div className={'postCard__bottomContainer'}>
+          <p className={'postCard__p'}>{body}</p>
+          <div className={'postCard__cardOptions'}>
             <div data-testid="heartContainer" onClick={handleLikeClick}>
               {like ? <AiFillHeart /> : <AiOutlineHeart />}
             </div>
@@ -57,6 +56,7 @@ const PostCard: React.FC<PostModel> = ({ body, id, title, userId }) => {
           </div>
         </div>
       </section>
+
       {modalIsOpen && (
         <Modal closeModalFn={closeModal}>
           {modalContent === 'editModal' ? (

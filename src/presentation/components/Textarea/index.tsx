@@ -1,4 +1,4 @@
-import Styles from './styles.scss';
+import './styles.scss';
 
 type Props = {
   id: string;
@@ -10,18 +10,12 @@ type Props = {
 
 const Teaxtarea: React.FC<Props> = ({ id, name, onChange, value, label }) => {
   return (
-    <div className={Styles.textareaContainer}>
-      <label className={Styles.textareaLabel} htmlFor={id}>
+    <div className={'textArea'}>
+      <label className={'textArea__label'} htmlFor={id}>
         {label || 'Message'}
       </label>
 
-      <textarea
-        className={Styles.textarea}
-        id={id}
-        name={name}
-        onChange={onChange}
-        value={value}
-      />
+      <textarea id={id} name={name} onChange={onChange} value={value} />
     </div>
   );
 };

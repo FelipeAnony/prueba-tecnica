@@ -1,13 +1,13 @@
-@import '../../styles/colors';
+@use '../../styles/colors';
 
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $primary-color-extraDark;
-  margin-top: 20px;
+  background-color: colors.$primary-color-extraDark;
+  margin-top: 1.25rem;
   width: 100%;
-  height: 150px;
-  padding: 10px;
+  height: 10rem;
+  padding: .625rem;
   color: white;
 }

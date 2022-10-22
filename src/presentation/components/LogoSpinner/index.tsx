@@ -1,15 +1,15 @@
 import { useTranslation } from 'react-i18next';
 
-import Styles from './styles.scss';
+import './styles.scss';
 
 const LogoSpinner: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section className={Styles.logoSpinner}>
-      <div className={Styles.logoLetters}>SocialCards</div>
-      <div className={Styles.spinner}></div>
-      <span className={Styles.loading}>{t('loading')}...</span>
+    <section className={'logoSpinner'}>
+      <div className={'logoSpinner__title'}>SocialCards</div>
+      <div className={'logoSpinner__spinner'}></div>
+      <span className={'logoSpinner__loading'}>{t('loading')}...</span>
     </section>
   );
 };

@@ -1,9 +1,9 @@
-.error {
+.errorMessage {
   display: flex;
   width: 100%;
   background-color: rgba(250, 113, 113, 0.773);
   color: red;
-  margin-top: 10px;
-  border-radius: 4px;
-  padding: 4px;
+  margin-top: .625rem;
+  border-radius: .25rem;
+  padding: .25rem;
 }

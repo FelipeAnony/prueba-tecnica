@@ -2,7 +2,7 @@ import {
   PrivateRoute,
   Header,
   Footer,
-  CardsContainer,
+  CardsWrapper,
   AddPostForm,
 } from '@/presentation/components';
 
@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
       <Header />
       <PostsDataContextProvider>
         <AddPostForm />
-        <CardsContainer />
+        <CardsWrapper />
       </PostsDataContextProvider>
       <Footer />
     </PrivateRoute>

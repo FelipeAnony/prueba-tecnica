@@ -1,6 +1,6 @@
 import { HelpMessage } from '../';
 
-import Styles from './styles.scss';
+import './styles.scss';
 
 type Props = {
   label: string;
@@ -28,8 +28,8 @@ const Input: React.FC<Props> = ({
   value,
 }) => {
   return (
-    <div className={Styles.inputContainer}>
-      <div className={Styles.helpMessage}>
+    <div className={'input'}>
+      <div className={'input__helpMessage'}>
         <label htmlFor={id}>{label}</label>
         {helpMessage && <HelpMessage message={helpMessage} />}
       </div>

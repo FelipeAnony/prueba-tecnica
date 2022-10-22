@@ -1,4 +1,4 @@
-import Styles from './styles.scss';
+import './styles.scss';
 
 type Props = {
   message: string;
@@ -6,7 +6,7 @@ type Props = {
 
 const HelpMessage: React.FC<Props> = ({ message }) => {
   return (
-    <div title={message} className={Styles.help}>
+    <div title={message} className={'helpMessage'}>
       ?
     </div>
   );

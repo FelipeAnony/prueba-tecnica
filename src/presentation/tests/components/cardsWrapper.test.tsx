@@ -5,7 +5,7 @@
 import { screen, render } from '@testing-library/react';
 
 import { postMock } from '@/data/mocks';
-import { CardsContainer } from '@/presentation/components';
+import { CardsWrapper } from '@/presentation/components';
 import { mockUseCardsContainer } from '@/presentation/mocks';
 
 jest.mock('@/presentation/hooks/useCardsContainer');
@@ -21,7 +21,7 @@ jest.mock('react-i18next', () => ({
 }));
 
 const renderSut = () => {
-  render(<CardsContainer />);
+  render(<CardsWrapper />);
 };
 
 describe('CardsContainer component', () => {

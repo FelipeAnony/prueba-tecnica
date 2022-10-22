@@ -1,31 +1,31 @@
-@import '../../styles/colors';
+@use '../../styles/colors';
 
 .logoSpinner {
   display: flex;
-  width: 100px;
+  width: 6.25rem;
   position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: $primary-color-dark;
-}
-  
-.logoLetters {
-  position: absolute;
-  top: 5px;
-  left: 13px;
-}
-  
-.spinner {
-  width: 100px;
-  height: 30px;
-  border: solid 2px $primary-color-extraDark;
-  border-radius: 2px 6px;
-  animation: logoSpinner 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-}
-  
-.loading {
-  font-size: 12px;
+  color: colors.$primary-color-dark;
+
+  &__title {
+    position: absolute;
+    top: .3rem;
+    left: .8rem;
+  }
+
+  &__spinner {
+    width: 6.25rem;
+    height: 1.875rem;
+    border: solid .125rem colors.$primary-color-extraDark;
+    border-radius: .125rem .375rem;
+    animation: logoSpinner 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+
+  &__loading {
+    font-size: .75rem;
+  }
 }
 
 @keyframes logoSpinner {

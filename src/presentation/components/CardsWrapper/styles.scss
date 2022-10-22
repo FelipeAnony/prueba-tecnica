@@ -1,0 +1,40 @@
+.cardsWrapper {
+  width: 100%;
+  min-height: calc(100vh - 250px);
+
+  &__errorContainer {
+    width: calc(100% - 20px);
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  &__cardsContainer {
+    width: 100%;
+    max-width: 57.5rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    padding: 0 .625rem;
+  }
+
+  &__loadingContainer {
+    width: 100%;
+    margin-top: 1.25rem;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 920px) {
+  .cardsWrapper {
+    &__cardsContainer {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-flow: row;
+      column-gap: .625rem;
+    }
+  } 
+}

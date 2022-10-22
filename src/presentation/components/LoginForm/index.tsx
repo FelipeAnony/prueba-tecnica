@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Input, ErrorMessage, Button } from '../';
 import { useLoginForm } from '@/presentation/hooks';
 
-import Styles from './styles.scss';
+import './styles.scss';
 
 const LoginForm: React.FC = () => {
   const { loginData, error, buttonIsDisabled, handleChange, handleSubmit } =
@@ -12,9 +12,9 @@ const LoginForm: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section className={Styles.loginFormContainer}>
+    <section className={'loginForm'}>
       <h1>{t('login')}</h1>
-      <form onSubmit={(e) => e.preventDefault()} className={Styles.loginForm}>
+      <form onSubmit={(e) => e.preventDefault()} className={'loginForm__form'}>
         <Input
           label="Email"
           name="email"
@@ -41,7 +41,7 @@ const LoginForm: React.FC = () => {
 
         {error && <ErrorMessage error={t(error.message)} />}
 
-        <div className={Styles.buttonContainer}>
+        <div className={'loginForm__buttonContainer'}>
           <Button
             style={buttonIsDisabled ? 'disabled' : undefined}
             disabled={buttonIsDisabled}

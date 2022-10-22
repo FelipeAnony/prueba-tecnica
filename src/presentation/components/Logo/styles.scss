@@ -1,17 +1,17 @@
-.innerContainer {
+.logo {
   width: 100%;
-  padding: 0 10px;
+  padding: 0 .625rem;
   height: 75%;
-  max-width: 800px;
+  max-width: 50rem;
   display: flex;
   align-items: center;
   color: white;
   margin: 0 auto;
-}
 
-.logo {
-  font-size: 18px;
-  padding: 2px;
-  border: solid 2px white;
-  border-radius: 1px 6px; 
+  &__title {
+    font-size: 1.12rem;
+    padding: .125rem;
+    border: solid .125rem white;
+    border-radius: 1px .37rem; 
+  }
 }

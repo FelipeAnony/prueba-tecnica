@@ -5,39 +5,37 @@ import { useTranslation } from 'react-i18next';
 import { Button, ChangeLanguageBtn, Logo } from '../';
 import { useHeader } from '@/presentation/hooks';
 
-import Styles from './styles.scss';
+import './styles.scss';
 
 const Header: React.FC = () => {
   const { user, handleLogout } = useHeader();
   const { t } = useTranslation();
 
   return (
-    <header className={Styles.header}>
+    <header className={'header'}>
       <Logo />
-      <div className={Styles.downLine}>
-        <div className={Styles.innerContainer}>
-          <div className={Styles.userInfo}>
-            {user?.user && (
-              <>
-                <AiOutlineUser className={Styles.userIcon} />
-                <span className={Styles.userName}>{user?.user}</span>
-              </>
-            )}
+      <div className={'header__downLine'}>
+        <nav className={'header__nav'}>
+          {user?.user && (
+            <>
+              <AiOutlineUser className={'header__userIcon'} />
+              <span className={'header__userName'}>{user?.user}</span>
+            </>
+          )}
 
-            <ChangeLanguageBtn />
+          <ChangeLanguageBtn />
 
-            {user?.user && (
-              <div className={Styles.logoutButtonContainer}>
-                <Button onClick={handleLogout} style="clear">
-                  <span>
-                    <FiLogOut />
-                    {t('logout')}
-                  </span>
-                </Button>
-              </div>
-            )}
-          </div>
-        </div>
+          {user?.user && (
+            <div className={'header__logoutButtonContainer'}>
+              <Button onClick={handleLogout} style="clear">
+                <span>
+                  <FiLogOut />
+                  {t('logout')}
+                </span>
+              </Button>
+            </div>
+          )}
+        </nav>
       </div>
     </header>
   );

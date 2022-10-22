@@ -5,7 +5,7 @@ import { Input, Textarea, Button } from '../';
 import { useGlobalDataContext } from '@/store/hooks';
 import { useAddPostForm } from '@/presentation/hooks';
 
-import Styles from './styles.scss';
+import './styles.scss';
 
 const AddPostForm: React.FC = () => {
   const {
@@ -28,21 +28,22 @@ const AddPostForm: React.FC = () => {
   };
 
   return (
-    <section
-      className={`${Styles.addPostFormContainer} ${
-        isOpen && Styles.containerIsOpen
-      }`}
-    >
-      <div className={Styles.titleContainer}>
-        <h2 className={Styles.title}>{t('add new post')}</h2>
+    <section className={`addPostForm ${isOpen && 'addPostForm--open'}`}>
+      <div className={'addPostForm__header'}>
+        <h2 className={'addPostForm__title'}>{t('add new post')}</h2>
         <AiOutlineDown
           data-testid="openButton"
-          className={`${Styles.arrowIcon} ${!isOpen && Styles.arrowUp}`}
+          className={`addPostForm__arrowButton ${
+            isOpen && 'addPostForm__arrowButton--up'
+          }`}
           onClick={handleOpenClick}
         />
       </div>
 
-      <form onSubmit={(e) => e.preventDefault()} className={Styles.form}>
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        className={'addPostForm__form'}
+      >
         <Input
           id="addPostTitle"
           name="title"
@@ -60,7 +61,7 @@ const AddPostForm: React.FC = () => {
           label={t('message')}
         />
 
-        <div className={Styles.buttonContainer}>
+        <div className={'addPostForm__addButtonContainer'}>
           <Button
             onClick={() => handleAddPost(newPostObject)}
             disabled={!formData.title.length || !formData.body.length}

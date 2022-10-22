@@ -1,54 +1,54 @@
-@import '../../styles/colors';
+@use '../../styles/colors';
 
-.addPostFormContainer {
+.addPostForm {
   display: flex;
   overflow: hidden;
   flex-direction: column;
-  margin: 10px auto 0 auto;
+  margin: .625rem auto 0 auto;
   width: calc(100% - 20px);
-  max-width: 900px;
-  height: 250px;
-  padding: 10px;
+  max-width: 56rem;
+  height: 3rem;
+  padding: .625rem;
   background-color: #ededed;
-  border-radius: 4px;
-  border: solid 2px $primary-color-mid;
+  border-radius: .25rem;
+  border: solid 2px colors.$primary-color-mid;
   transition: all ease .3s;
-}
 
-.titleContainer{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  h2 {
-    font-size: 15px;
+  &--open {
+    height: 16.5rem;
   }
-}
 
-.arrowIcon {
-  font-size: 18px;
-  align-self: flex-end;
-  transition: all ease .3s;
-  cursor: pointer;
-  border-radius: 50%;
-  padding: 2px;
-  width: 22px;
-  height: 22px;
-
-  &:hover {
-    background-color: #ccc;
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    h2 {
+      font-size: .9rem;
+    }
   }
-}
 
-.arrowUp {
-  transform: rotate(180deg);
-}
+  &__arrowButton {
+    font-size: 1.12rem;
+    align-self: flex-end;
+    transition: all ease .3s;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: .012rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  
+    &:hover {
+      background-color: #ccc;
+    }
+  }
 
-.buttonContainer {
-  margin: 10px auto;
-  width: 60%;
-}
+  &__arrowButton--up {
+    transform: rotate(180deg);
+  }
 
-.containerIsOpen {
-  height: 50px;
+  &__addButtonContainer {
+    margin: .625rem auto;
+    width: 60%;
+  }
 }

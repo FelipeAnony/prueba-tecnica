@@ -1,8 +1,8 @@
-@import '../../styles/colors';
+@use '../../styles/colors';
 
 .postCard {
   padding: 6px;
-  border: solid 2px $primary-color-mid;
+  border: solid 2px colors.$primary-color-mid;
   background-color: #ededed;
   margin-top: 10px;
   border-radius: 1px 8px;
@@ -13,73 +13,74 @@
   grid-template-rows: 45% 45%;
   grid-template-columns: 30% 70%;
   grid-template-areas: 
-    'image title'
-    'body body';
-}
+    'image header'
+    'bottomContainer bottomContainer';
 
-.imgContainer {
-  grid-area: image;
-  display: flex;
-  margin-right: 15px;
-  background-color: #ccc;
-  justify-content: center;
-  align-items: center;
-  font-size: 38px;
-  border-radius: 4px;
-}
+  &__imgContainer {
+    grid-area: image;
+    display: flex;
+    margin-right: 15px;
+    background-color: #ccc;
+    justify-content: center;
+    align-items: center;
+    font-size: 38px;
+    border-radius: 4px;
+  }
+
+  &__header {
+    grid-area: header;
+  }
+
+  &__title {
+    font-size: 1rem;
+  }
+
+  &__userId {
+    margin-top: .3rem;
+  }
+
+  &__bottomContainer {
+    width: 100%;
+    margin-top: 1.25rem;
+    height: 5rem;
+    grid-area: bottomContainer;
+  }
+
+  &__p {
+    border: solid 1px colors.$primary-color-dark;
+    height: 4.5rem;
+    padding: .25rem;
+    border-radius: .2rem;
+    overflow: auto;
+  }
+
+  &__cardOptions {
+    margin-top: .3rem;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1rem;
+    width: 100%;
+    height: 100%;
     
-.titleContainer {
-  grid-area: title;
-}
-
-.title {
-  font-size: 16px;
-}
-    
-.userId {
-  margin-top: 5px;
-}
-
-.downContainer {
-  width: 100%;
-  margin-top: 20px;
-  height: 80px;
-  grid-area: body;
-}
-
-.body {
-  border: solid 1px $primary-color-dark;
-  height: 57px;
-  padding: 4px;
-  border-radius: 3px;
-  overflow: auto;
-}
-
-.cardOptions {
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 16px;
-  width: 100%;
-  height: 100%;
-  
-  svg {
-    padding: 4px;
-    width: 23px;
-    height: 23px;
-      
-    &:hover {
-      background-color: #ccc;
-      transition: all ease .3s;
-      border-radius: 50%;
-      cursor: pointer;
+    svg {
+      padding: .25rem;
+      width: 1.5rem;
+      height: 1.5rem;
+        
+      &:hover {
+        background-color: #ccc;
+        transition: all ease .3s;
+        border-radius: 50%;
+        cursor: pointer;
+      }
     }
   }
+
 }
 
 @media (min-width: 921px) {
   .postCard {
-    max-width: 450px;
-    margin: 10px 10px 0 0;
+    max-width: 28.12rem;
+    margin: .625rem .625rem 0 0;
   }
 }

@@ -4,7 +4,7 @@ import { PostModel } from '@/domain/models';
 import { Input, Button, Textarea } from '../';
 import { useForm } from '@/presentation/hooks';
 
-import Styles from './styles.scss';
+import './styles.scss';
 
 type Props = {
   title: string;
@@ -27,9 +27,12 @@ const EditPostForm: React.FC<Props> = ({
   const { t } = useTranslation();
 
   return (
-    <section className={Styles.editPostFormContainer}>
-      <h2 className={Styles.edit}>{t('edit post')}</h2>
-      <form className={Styles.form} onSubmit={(e) => e.preventDefault()}>
+    <section className={'editPostForm'}>
+      <h2 className={'editPostForm__title'}>{t('edit post')}</h2>
+      <form
+        className={'editPostForm__form'}
+        onSubmit={(e) => e.preventDefault()}
+      >
         <Input
           id="title"
           label={t('title')}
@@ -47,7 +50,7 @@ const EditPostForm: React.FC<Props> = ({
           label={t('message')}
         />
 
-        <div className={Styles.buttonsContainer}>
+        <div className={'editPostForm__buttonsContainer'}>
           <Button style="outline" onClick={closeFn}>
             {t('cancel')}
           </Button>

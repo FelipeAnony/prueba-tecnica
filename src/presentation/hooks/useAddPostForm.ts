@@ -6,7 +6,7 @@ import { useForm } from './useForm';
 export const useAddPostForm = () => {
   const { addPost, postsList } = usePostsDataContext();
   const [formData, handleChange, clearForm] = useForm({ title: '', body: '' });
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenClick = () => setIsOpen(!isOpen);
 

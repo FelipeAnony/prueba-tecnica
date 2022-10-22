@@ -1,32 +1,32 @@
-.languageButtons {
+.changeLanguageBtn {
   display: flex;
-  height: 15px;
+  height: 1rem;
   width: max-content;
   margin-left: auto;
-  margin-right: 20px;
+  margin-right: 1.25rem;
   justify-content: space-between;
   color: white;
 
-  div {
+  &__imgContainer {
     display: flex;
     align-items: center;
+  
+    img {
+      height: .625rem;
+      width: .8rem;
+      margin:0 .25rem;
+    }
   }
 
-  span {
+  &__span{
     display: flex;
     align-items: center;
     height: 100%;
   }
 
-  img {
-    height: 10px;
-    width: 14px;
-    margin:0 4px;
-  }
-
   button {
-    font-size: 10px;
-    margin-right: 8px;
+    font-size: .625rem;
+    margin-right: .5rem;
     color: white;
   }
 }

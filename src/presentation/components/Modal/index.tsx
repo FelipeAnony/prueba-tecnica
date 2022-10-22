@@ -1,6 +1,6 @@
 import { Button } from '../';
 
-import Styles from './styles.scss';
+import './styles.scss';
 
 type Props = {
   closeModalFn: () => void;
@@ -12,13 +12,13 @@ const Modal: React.FC<Props> = ({ closeModalFn, children }) => {
     <div
       data-testid="modalOutContainer"
       onClick={closeModalFn}
-      className={Styles.modalWindow}
+      className={'modal'}
     >
       <section
         onClick={(e) => e.stopPropagation()}
-        className={Styles.modalContainer}
+        className={'modal__innerContainer'}
       >
-        <div className={Styles.buttonContainer}>
+        <div className={'modal__closeButton'}>
           <Button style="clear" onClick={closeModalFn}>
             X
           </Button>

@@ -1,4 +1,4 @@
-import Styles from './styles.scss';
+import './styles.scss';
 
 type Props = {
   onClick: () => void;
@@ -10,13 +10,13 @@ type Props = {
 export const Button: React.FC<Props> = ({
   children,
   onClick,
-  style,
+  style = 'default',
   disabled,
 }) => {
   return (
     <button
       disabled={disabled}
-      className={Styles[style || 'default']}
+      className={`button--${style}`}
       onClick={onClick}
     >
       {children}

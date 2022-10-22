@@ -1,28 +1,26 @@
-@import '../../styles/colors';
-
-.editPostFormContainer {
+.editPostForm {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: max-content;
-  padding: 10px;
-}
-  
-.title {
-  margin: 10px 0;
-}
+  padding: .625rem;
 
-.form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-  
-.buttonsContainer{
-  display: grid;
-  grid-template-columns: 45% 45%;
-  column-gap: 10%;
-  width: 100%;
-  margin-top: 20px;
+  &__title {
+    margin: .625rem 0;
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__buttonsContainer{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    column-gap: 10%;
+    width: 100%;
+    margin-top: 1.25rem;
+  }
 }

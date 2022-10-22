@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import Button from '../Button';
 
-import Styles from './styles.scss';
+import './styles.scss';
 
 type Props = {
   deleteFn: () => void;
@@ -18,17 +18,19 @@ const DeleteConfirmation: React.FC<Props> = ({
   const { t } = useTranslation();
 
   return (
-    <div className={Styles.deleteConfirmation}>
-      <span className={Styles.question}>
+    <div className={'deleteConfirmation'}>
+      <span className={'deleteConfirmation__question'}>
         {t('are you sure you want to delete')}:
       </span>
 
-      <span className={Styles.name}>{name} ?</span>
+      <span className={'deleteConfirmation__targetName'}>{name} ?</span>
 
-      <div className={Styles.buttonsContainer}>
+      <div className={'deleteConfirmation__buttonsContainer'}>
         <Button onClick={cancelDeleteFn}>{t('no, cancel')}</Button>
         <Button onClick={deleteFn} style="clear">
-          <span className={Styles.deleteButton}>{t('yes, delete')}</span>
+          <span className={'deleteConfirmation__deleteText'}>
+            {t('yes, delete')}
+          </span>
         </Button>
       </div>
     </div>
