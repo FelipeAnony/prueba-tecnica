@@ -8,7 +8,6 @@ export class LocalValidator implements Validator {
 
   passwordIsValid(password: string): boolean {
     const passwordRegexp = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{6,12}$/;
-
     return passwordRegexp.test(password);
   }
 }

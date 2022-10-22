@@ -1,7 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
 
-// const useObserver = new IntersectionObserver()
-
 export const useObserver = (
   callback: IntersectionObserverCallback,
   options: IntersectionObserverInit = {}
