@@ -13,7 +13,9 @@ export const useObserver = (
       observer.current.observe(element);
     }
 
-    () => observer.current.disconnect();
+    return () => {
+      observer.current.disconnect();
+    };
   }, [element]);
 
   return { setElement };

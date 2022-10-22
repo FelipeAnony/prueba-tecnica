@@ -64,7 +64,7 @@ describe('AddPostForm component', () => {
   });
 
   it('Should not calls handleAddPost if any formData fields is empty', async () => {
-    const { handleAddPost, formData } = mockUseAddPostForm({
+    const { handleAddPost } = mockUseAddPostForm({
       title: '',
       body: '',
     });
