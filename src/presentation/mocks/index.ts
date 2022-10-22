@@ -1,5 +1,5 @@
 export * from './mockUseAddPostForm';
-export * from './mockUseCardsContainer';
+export * from './mockUseCardsWrapper';
 export * from './mockUseEditPostForm';
 export * from './mockUseHeader';
 export * from './mockUseLoginForm';

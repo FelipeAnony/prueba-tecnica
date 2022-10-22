@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 
 import { PostCard, LogoSpinner, ErrorMessage } from '..';
-import { useCardsContainer } from '@/presentation/hooks';
+import { useCardsWrapper } from '@/presentation/hooks';
 
 import './styles.scss';
 
 const CardsContainer: React.FC = () => {
-  const { postsToRender, error } = useCardsContainer();
+  const { postsToRender, error } = useCardsWrapper();
   const { t } = useTranslation();
 
   return (

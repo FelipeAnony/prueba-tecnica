@@ -8,7 +8,7 @@ import { postMock } from '@/data/mocks';
 import { CardsWrapper } from '@/presentation/components';
 import { mockUseCardsContainer } from '@/presentation/mocks';
 
-jest.mock('@/presentation/hooks/useCardsContainer');
+jest.mock('@/presentation/hooks/useCardsWrapper');
 jest.mock('react-i18next', () => ({
   useTranslation: () => {
     return {

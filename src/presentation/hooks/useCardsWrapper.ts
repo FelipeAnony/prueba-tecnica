@@ -4,7 +4,7 @@ import { PostModel } from '@/domain/models';
 import { usePostsDataContext } from '@/store/hooks';
 import { useObserver } from '@/presentation/hooks';
 
-export const useCardsContainer = () => {
+export const useCardsWrapper = () => {
   const { error, postsList } = usePostsDataContext();
   const [itemsToRenderAmount, setItemsToRenderAmount] = useState(0);
   const [postsToRender, setPostsToRender] = useState([] as PostModel[]);

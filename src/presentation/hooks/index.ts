@@ -1,5 +1,5 @@
 export * from './useAddPostForm';
-export * from './useCardsContainer';
+export * from './useCardsWrapper';
 export * from './useForm';
 export * from './useHeader';
 export * from './useLoginForm';
