@@ -6,6 +6,9 @@ coverage
 firebase.json
 .firebase
 
+cypress/e2e/1-getting-started
+cypress/e2e/2-advanced-examples
+
 public/js
 
 dist
