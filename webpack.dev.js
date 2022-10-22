@@ -19,9 +19,6 @@ module.exports = merge(common, {
           },
           {
             loader: 'css-loader',
-            options: {
-              modules: true,
-            },
           },
           {
             loader: 'sass-loader',
