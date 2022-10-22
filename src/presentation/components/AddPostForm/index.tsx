@@ -1,8 +1,8 @@
 import { AiOutlineDown } from 'react-icons/ai';
 import { useTranslation } from 'react-i18next';
 
-import { Input, Textarea, Button } from '../';
 import { useGlobalDataContext } from '@/store/hooks';
+import { Input, Textarea, Button } from '@/presentation/components';
 import { useAddPostForm } from '@/presentation/hooks';
 
 import './styles.scss';

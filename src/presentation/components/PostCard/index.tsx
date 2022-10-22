@@ -9,8 +9,12 @@ import {
 
 import { PostModel } from '@/domain/models';
 import { usePostsDataContext } from '@/store/hooks';
-import { Modal, EditPostForm, DeleteConfirmation } from '../';
 import { usePostCard } from '@/presentation/hooks';
+import {
+  Modal,
+  EditPostForm,
+  DeleteConfirmation,
+} from '@/presentation/components';
 
 import './styles.scss';
 

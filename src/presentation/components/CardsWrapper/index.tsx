@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { PostCard, LogoSpinner, ErrorMessage } from '..';
+import { PostCard, LogoSpinner, ErrorMessage } from '@/presentation/components';
 import { useCardsWrapper } from '@/presentation/hooks';
 
 import './styles.scss';

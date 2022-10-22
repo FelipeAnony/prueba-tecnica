@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import Button from '../Button';
+import { Button } from '@/presentation/components';
 
 import './styles.scss';
 

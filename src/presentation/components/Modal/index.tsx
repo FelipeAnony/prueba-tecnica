@@ -1,4 +1,4 @@
-import { Button } from '../';
+import { Button } from '@/presentation/components';
 
 import './styles.scss';
 

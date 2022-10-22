@@ -2,7 +2,7 @@ import { AiOutlineUser } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
-import { Button, ChangeLanguageBtn, Logo } from '../';
+import { Button, ChangeLanguageBtn, Logo } from '@/presentation/components';
 import { useHeader } from '@/presentation/hooks';
 
 import './styles.scss';

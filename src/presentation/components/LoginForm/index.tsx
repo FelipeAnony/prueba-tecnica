@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { Input, ErrorMessage, Button } from '../';
+import { Input, ErrorMessage, Button } from '@/presentation/components';
 import { useLoginForm } from '@/presentation/hooks';
 
 import './styles.scss';

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { PostModel } from '@/domain/models';
-import { Input, Button, Textarea } from '../';
+import { Input, Button, Textarea } from '@/presentation/components';
 import { useForm } from '@/presentation/hooks';
 
 import './styles.scss';
