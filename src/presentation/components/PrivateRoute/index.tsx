@@ -2,7 +2,7 @@ import { Navigate } from 'react-router-dom';
 
 type Props = {
   auth: any;
-  children: JSX.Element;
+  children: React.ReactNode;
   redirectOnFailTo: string;
 };
 

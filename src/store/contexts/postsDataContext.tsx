@@ -4,7 +4,7 @@ import { useRemotePosts } from '../hooks/useRemotePosts';
 import { PostDataContextProtocol } from '../protocols';
 
 type Props = {
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 const contextInitialValue: PostDataContextProtocol = {
