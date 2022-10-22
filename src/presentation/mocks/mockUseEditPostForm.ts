@@ -1,15 +1,16 @@
-import { useEditPostForm } from '@/presentation/hooks';
+import { useForm } from '../hooks';
 
-const mockedUseEditPostForm = useEditPostForm as jest.MockedFn<
-  typeof useEditPostForm
+const mockedUseEditPostForm = useForm as jest.MockedFn<
+  typeof useForm<{ body: string; title: string }>
 >;
 
 export const mockUseEditPostForm = () => {
   const handleChange = jest.fn(() => {});
-  mockedUseEditPostForm.mockReturnValueOnce({
-    formData: { body: 'any-body', title: 'any-title' },
+  mockedUseEditPostForm.mockReturnValueOnce([
+    { body: 'any-body', title: 'any-title' },
     handleChange,
-  });
+    () => null,
+  ]);
 
   return { handleChange };
 };

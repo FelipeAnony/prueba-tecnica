@@ -10,7 +10,7 @@ import { EditPostForm } from '@/presentation/components';
 
 import { mockUseEditPostForm } from '@/presentation/mocks';
 
-jest.mock('@/presentation/hooks/useEditPostForm');
+jest.mock('@/presentation/hooks/useForm');
 jest.mock('react-i18next', () => ({
   useTranslation: () => {
     return {

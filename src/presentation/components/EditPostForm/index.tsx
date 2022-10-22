@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import { PostModel } from '@/domain/models';
 import { Input, Button, Textarea } from '../';
-import { useEditPostForm } from '@/presentation/hooks';
+import { useForm } from '@/presentation/hooks';
 
 import Styles from './styles.scss';
 
@@ -23,7 +23,7 @@ const EditPostForm: React.FC<Props> = ({
   id,
   userId,
 }) => {
-  const { formData, handleChange } = useEditPostForm(title, body);
+  const [formData, handleChange] = useForm({ title, body });
   const { t } = useTranslation();
 
   return (
