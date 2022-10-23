@@ -23,9 +23,7 @@ export const useCardsWrapper = () => {
 
   useEffect(() => {
     const element = document.getElementById('end');
-    if (element) {
-      setElement(element);
-    }
+    if (element) setElement(element);
   }, []);
 
   const postsToRender = postsList.slice(0, itemsToRenderAmount);

@@ -1,6 +1,8 @@
+import { useState } from 'react';
+
 import { PostModel } from '@/domain/models';
 import { usePostsDataContext } from '@/store/hooks';
-import { useState } from 'react';
+
 import { useForm } from './useForm';
 
 export const useAddPostForm = () => {

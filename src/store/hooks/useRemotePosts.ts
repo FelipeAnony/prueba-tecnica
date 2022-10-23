@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 import { PostModel } from '@/domain/models';
 import { makeRemotePosts } from '@/main/factories';
@@ -7,7 +7,7 @@ export const useRemotePosts = () => {
   const [postsList, setPostsList] = useState<PostModel[]>([]);
   const [error, setError] = useState<Error | null>(null);
 
-  const { current: remotePosts } = useRef(makeRemotePosts());
+  const remotePosts = useMemo(() => makeRemotePosts(), []);
 
   useEffect(() => {
     const loadData = async () => {

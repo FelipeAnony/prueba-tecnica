@@ -4,9 +4,11 @@ type HandleChangeParamType = React.ChangeEvent<
   HTMLInputElement | HTMLTextAreaElement
 >;
 
-type UseFormReturn<T> = [T, (e: HandleChangeParamType) => void, () => void];
+type UseFormType = <T>(
+  initialFormValue: T
+) => [T, (e: HandleChangeParamType) => void, () => void];
 
-export const useForm = <T>(initialFormValue: T): UseFormReturn<T> => {
+export const useForm: UseFormType = (initialFormValue) => {
   const [formData, setFormData] = useState(initialFormValue);
 
   const handleChange = (e: HandleChangeParamType) => {
