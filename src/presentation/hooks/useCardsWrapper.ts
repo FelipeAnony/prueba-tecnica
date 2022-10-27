@@ -21,10 +21,7 @@ export const useCardsWrapper = () => {
 
   const { setElement } = useObserver(observerCallback, observerOptions);
 
-  useEffect(() => {
-    const element = document.getElementById('end');
-    if (element) setElement(element);
-  }, []);
+  useEffect(() => setElement(document.getElementById('end')), []);
 
   const postsToRender = postsList.slice(0, itemsToRenderAmount);
 
