@@ -15,14 +15,13 @@ export const useLoginForm = () => {
 
   const { setUser } = useGlobalDataContext();
   const navigate = useNavigate();
+  const authentication = useMemo(() => makeLocalAuthentication(), []);
 
   useEffect(() => {
     setButtonIsDisabled(
       loginData.email.length < 6 || loginData.password.length < 6
     );
   }, [loginData]);
-
-  const authentication = useMemo(() => makeLocalAuthentication(), []);
 
   const handleSubmit = async () => {
     setButtonIsDisabled(true);
